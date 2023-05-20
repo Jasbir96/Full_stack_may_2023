@@ -1,0 +1,5 @@
+@media only screen and (max-width: 500px) {
+    h1 {
+        background-color: aquamarine;
+    }
+}
