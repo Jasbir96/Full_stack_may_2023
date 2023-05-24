@@ -1,1 +1,0 @@
-# Refer to the notes -> no code written int the first lecture

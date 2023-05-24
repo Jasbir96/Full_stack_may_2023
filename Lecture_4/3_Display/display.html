@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .block,
+    .inline,
+    .inline_block {
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+
+    /* template starts from here */
+    .block {
+         background-color: lightblue;
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+
+        padding: 20px;
+        /* h-margin */
+        margin-top: 20px;
+        /* v-margin  */
+        margin-left: 20px;
+
+
+    } 
+
+    .inline {
+        /* width ,height , margin -vertical */
+         width: 200px; 
+         height: 200px;
+         margin-top: 100px;
+        background-color: rgb(177, 177, 69);
+        border: 2px solid red;
+        padding-left: 30px;
+        padding-bottom: 200px;
+        margin-left: 30px;
+        padding-top:200px;
+       
+    }
+
+    .inline_block {
+        display: inline-block;
+        background-color: lightcoral;
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        margin-bottom: 20px;
+        padding-top: 300px;
+    }
+</style>
+
+<body>
+    <!-- block level element  -->
+    <div class="block">Hello Hi how are you</div>
+
+
+
+    <!-- inline element -> style a part of a line -->
+    <span class="inline">I am inline</span>
+
+
+    <!--  inline block -->
+    <div class="inline_block">I am inline block</div>
+</body>
+
+</html>

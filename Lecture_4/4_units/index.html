@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .px,
+    .rem,
+    .vh-vw,
+
+    .em {
+        margin-bottom: 20px;
+        background-color: lightgreen;
+    }
+
+    /* **************demo starts from here*************/
+    .px {
+        /* absolute */
+        font-size: 20px;
+
+    }
+
+    /* 1rem  -> font-size of html tag -> usually 16px*/
+    html {
+        font-size: 10px;
+    }
+
+    .pa {
+        font-size: 20px;
+    }
+
+    /* relative to current font size */
+    .em {
+        /* font-size: 20px; */
+        /* 1em -> 10px */
+        height: 10em;
+        width: 10em;
+        background-color: lightpink;
+    }
+
+    .rem {
+        /* height:20rem; */
+        /* width:30rem; */
+        /* font-size  */
+        font-size: 2rem;
+    }
+
+
+
+    /* viewport height ->borwser window height
+    where 100vh -> current height of browser window
+    */
+    .vh-vw {
+        /* 20% of browser screen height  */
+        height: 20vh;
+        /* 50% of browser screen width */
+        width: 50vw;
+        font-size: 2rem;
+    }
+
+    /* percentage -> it's value depend upon parent */
+    .gp {
+        height: 200px;
+        width: 200px;
+        background-color: bisque;
+    }
+
+    .parent {
+        height:50%;
+        width:50%;
+        background-color: lightcoral;
+    }
+
+    .child {
+        background-color: lightblue;
+        height: 50%;
+        width: 50%;
+    }
+</style>
+
+<body>
+    <div class="px">Pixel unit</div>
+    <div class="rem">REM Unit</div>
+    <div class="pa">
+
+        <div class="em">I am em</div>
+    </div>
+
+    <div class="vh-vw">VH - VW unit</div>
+    <div class="gp">
+<div class="parent">
+    <div class="child"> percentage </div>
+</div>
+    </div>
+    
+</body>
