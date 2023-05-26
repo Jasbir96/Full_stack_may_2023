@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacking Context</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+
+        }
+
+        .parent2 {
+            margin-left: 1rem;
+            background-color: rgb(218, 235, 163);
+
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+            background-color: lightcoral;
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+        /* template starts from here */
+        .box-2 {
+            position: fixed;
+            z-index: 4;
+        }
+        .parent2>.box-2{
+            background-color: gray;
+            position: relative;
+            z-index:-1;
+        }
+        .parent2{
+            position: relative;
+            z-index:5;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, autem assumenda! Quis quae labore quo?
+        Blanditiis dicta consectetur quas optio dolor. Eligendi hic eveniet sunt nesciunt sequi unde nobis! At?</p>
+   
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+
+    <div class="parent2">
+        <div class="box box-1"> Parent2 1</div>
+        <div class="box box-2">Parent2 2</div>
+        <div class="box box-3">Parent2 3</div>
+        <div class="box box-4">Parent2 4</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore, quas hic neque eaque aliquam
+        fugiat velit, odio quam autem culpa sequi sunt? Provident tempora laboriosam rerum earum, a magni, accusantium
+        illo sint delectus dolores quam possimus debitis vel eos asperiores in aperiam quia architecto ullam reiciendis
+        commodi aliquam cumque ad ipsum! Quod, libero sint! Dicta sed, earum iure cum, dolorem rerum commodi illum quasi
+        harum debitis asperiores. Cum voluptatibus delectus officiis neque, maxime, necessitatibus culpa enim eligendi
+        iusto incidunt aperiam ducimus corporis. Inventore assumenda explicabo quis praesentium molestiae ut dolor omnis
+        eius ullam a, neque, sint quos hic reprehenderit vitae cum eum quidem. Eos repellat, commodi, suscipit eius
+        dolorem asperiores iste unde nobis obcaecati at porro nihil. Nostrum vitae doloremque magni praesentium atque,
+        sed perferendis consequuntur architecto dolorum! Impedit provident labore aut ex molestiae. Voluptatibus ducimus
+        quibusdam necessitatibus? Aliquid natus fugiat, reprehenderit impedit exercitationem doloribus ipsam. Architecto
+        repellendus quaerat minima eveniet aperiam, in sequi nam nihil velit libero placeat ad incidunt dolorem, dolor
+        minus exercitationem. Aperiam hic incidunt provident, sed eum rerum voluptates dolore repellat. Dolores
+        inventore dicta laborum porro ratione perspiciatis tempora ducimus, architecto quasi, error fugit quod, omnis
+        possimus doloremque impedit! Nisi, dolorum consectetur voluptatem libero adipisci id ea veniam quis facere
+        molestiae atque, blanditiis laborum debitis cumque at quos provident dignissimos quod ipsa voluptatum. Omnis
+        culpa voluptatibus deserunt itaque ratione dolor, mollitia ipsum nulla quasi qui doloremque aut error veritatis.
+        Esse soluta ipsam sequi expedita dolores fugit, corrupti maiores, ullam pariatur dignissimos ratione a nostrum
+        voluptate natus iusto! Quaerat consectetur corporis quam non. Incidunt, sit? Quas, quis odit nihil nemo,
+        adipisci quaerat aut, perspiciatis sequi distinctio impedit repellat non porro? Unde in veritatis hic, dolorem
+        ipsam ullam temporibus assumenda quo porro aliquam modi esse ad nesciunt quaerat voluptas possimus.
+        Exercitationem accusamus velit consequatur ipsa itaque rerum!</p>
+</body>
+
+</html>
+
+
+<!-- 
+Rules :
+1. Positioned element is always above statically placed elements
+2. if both the elements are positioned then the element 
+that is positioned later is placed above.
+3. higher the z-index higher the value 
+4. your z-index depend upon your parent
+ -->

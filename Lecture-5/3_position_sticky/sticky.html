@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            ;
+            text-align: center;
+        }
+
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+            width: 90vw;
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+            background-color: lightcoral;
+
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        } 
+        /* template starts from here */
+       
+        .box-2{
+            position: sticky;
+            /* your element and screen top has 
+            this much distance */
+            top:20px;
+            /*  2. if your elem is in a parent
+            the as soon as your parent leaves the screen
+            you are also removed
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sticky </h2>
+        <div class="box box-2">2</div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente, vitae deleniti quos illo nam ab
+    voluptatum recusandae molestias voluptatem libero tempore porro iure minus, officiis placeat enim vero maiores
+    aperiam. Obcaecati adipisci quaerat molestiae id voluptatum? Maxime aut ab ullam esse quos molestias natus
+    aliquam odit provident rerum. Voluptatem accusantium alias rem, cupiditate suscipit pariatur sint commodi
+    temporibus necessitatibus, magni tenetur doloremque. Placeat perferendis quam pariatur dolor tempora minus eos
+    voluptatem enim quae atque eaque fugit eius, labore aliquam fuga exercitationem, assumenda veritatis quo ipsa
+    saepe ducimus consectetur quos illo sint. Veniam, dignissimos sequi sint facilis reiciendis minima. Quas
+    praesentium ab ratione perspiciatis nostrum voluptatum dolorum nisi in omnis reprehenderit recusandae nam
+    dolorem qui, esse nihil hic adipisci dolor facere voluptas? Voluptatum necessitatibus facilis praesentium, quam
+    voluptas magnam quisquam vitae odit inventore, laboriosam, eaque ullam ipsam. Rem, a hic iusto quidem veritatis
+    at. Provident, nisi neque assumenda sunt nihil quidem nam iusto officiis modi cum distinctio ratione veniam
+    facere minus laborum, architecto voluptate. Quas rerum voluptatibus ipsa harum incidunt odit sunt accusantium
+    quisquam, corrupti nihil, illum earum vitae iusto odio tenetur amet culpa quis? Voluptatibus dolores sit aliquid
+    numquam, officiis dolorem temporibus autem doloremque eveniet mollitia rerum rem illum incidunt nemo eligendi
+    quasi sed optio quidem aut assumenda veritatis tenetur corrupti quisquam nostrum! Expedita hic debitis
+    dignissimos inventore ducimus repellendus aliquam quibusdam mollitia doloremque totam, vitae alias officia, in
+    amet laboriosam id, distinctio consectetur. Possimus eligendi deleniti fugiat! Adipisci error, aspernatur eum
+    sint earum animi molestias aut nisi optio iusto modi tenetur, ipsa natus quis omnis quibusdam eveniet odit.
+    Provident mollitia quod qui. Laborum culpa, ipsa similique, voluptates laboriosam quia totam ad vero in autem,
+    rem commodi! Incidunt velit architecto esse id repudiandae et numquam ducimus voluptatum dignissimos doloribus
+    iste voluptatem unde quisquam sunt totam optio, corporis ratione voluptas!</p>
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente, vitae deleniti quos illo nam ab
+        voluptatum recusandae molestias voluptatem libero tempore porro iure minus, officiis placeat enim vero maiores
+        aperiam. Obcaecati adipisci quaerat molestiae id voluptatum? Maxime aut ab ullam esse quos molestias natus
+        aliquam odit provident rerum. Voluptatem accusantium alias rem, cupiditate suscipit pariatur sint commodi
+        temporibus necessitatibus, magni tenetur doloremque. Placeat perferendis quam pariatur dolor tempora minus eos
+        voluptatem enim quae atque eaque fugit eius, labore aliquam fuga exercitationem, assumenda veritatis quo ipsa
+        saepe ducimus consectetur quos illo sint. Veniam, dignissimos sequi sint facilis reiciendis minima. Quas
+        praesentium ab ratione perspiciatis nostrum voluptatum dolorum nisi in omnis reprehenderit recusandae nam
+        dolorem qui, esse nihil hic adipisci dolor facere voluptas? Voluptatum necessitatibus facilis praesentium, quam
+        voluptas magnam quisquam vitae odit inventore, laboriosam, eaque ullam ipsam. Rem, a hic iusto quidem veritatis
+        at. Provident, nisi neque assumenda sunt nihil quidem nam iusto officiis modi cum distinctio ratione veniam
+        facere minus laborum, architecto voluptate. Quas rerum voluptatibus ipsa harum incidunt odit sunt accusantium
+        quisquam, corrupti nihil, illum earum vitae iusto odio tenetur amet culpa quis? Voluptatibus dolores sit aliquid
+        numquam, officiis dolorem temporibus autem doloremque eveniet mollitia rerum rem illum incidunt nemo eligendi
+        quasi sed optio quidem aut assumenda veritatis tenetur corrupti quisquam nostrum! Expedita hic debitis
+        dignissimos inventore ducimus repellendus aliquam quibusdam mollitia doloremque totam, vitae alias officia, in
+        amet laboriosam id, distinctio consectetur. Possimus eligendi deleniti fugiat! Adipisci error, aspernatur eum
+        sint earum animi molestias aut nisi optio iusto modi tenetur, ipsa natus quis omnis quibusdam eveniet odit.
+        Provident mollitia quod qui. Laborum culpa, ipsa similique, voluptates laboriosam quia totam ad vero in autem,
+        rem commodi! Incidunt velit architecto esse id repudiandae et numquam ducimus voluptatum dignissimos doloribus
+        iste voluptatem unde quisquam sunt totam optio, corporis ratione voluptas!</p>
+        <div class="parent">
+            <div class="box box-1">1</div>
+            <div class="box box-2">2</div>
+            <div class="box box-3">3</div>
+            <div class="box box-4">4</div>
+        
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente, vitae deleniti quos illo nam ab
+            voluptatum recusandae molestias voluptatem libero tempore porro iure minus, officiis placeat enim vero maiores
+            aperiam. Obcaecati adipisci quaerat molestiae id voluptatum? Maxime aut ab ullam esse quos molestias natus
+            aliquam odit provident rerum. Voluptatem accusantium alias rem, cupiditate suscipit pariatur sint commodi
+            temporibus necessitatibus, magni tenetur doloremque. Placeat perferendis quam pariatur dolor tempora minus eos
+            voluptatem enim quae atque eaque fugit eius, labore aliquam fuga exercitationem, assumenda veritatis quo ipsa
+            saepe ducimus consectetur quos illo sint. Veniam, dignissimos sequi sint facilis reiciendis minima. Quas
+            praesentium ab ratione perspiciatis nostrum voluptatum dolorum nisi in omnis reprehenderit recusandae nam
+            dolorem qui, esse nihil hic adipisci dolor facere voluptas? Voluptatum necessitatibus facilis praesentium, quam
+            voluptas magnam quisquam vitae odit inventore, laboriosam, eaque ullam ipsam. Rem, a hic iusto quidem veritatis
+            at. Provident, nisi neque assumenda sunt nihil quidem nam iusto officiis modi cum distinctio ratione veniam
+            facere minus laborum, architecto voluptate. Quas rerum voluptatibus ipsa harum incidunt odit sunt accusantium
+            quisquam, corrupti nihil, illum earum vitae iusto odio tenetur amet culpa quis? Voluptatibus dolores sit aliquid
+            numquam, officiis dolorem temporibus autem doloremque eveniet mollitia rerum rem illum incidunt nemo eligendi
+            quasi sed optio quidem aut assumenda veritatis tenetur corrupti quisquam nostrum! Expedita hic debitis
+            dignissimos inventore ducimus repellendus aliquam quibusdam mollitia doloremque totam, vitae alias officia, in
+            amet laboriosam id, distinctio consectetur. Possimus eligendi deleniti fugiat! Adipisci error, aspernatur eum
+            sint earum animi molestias aut nisi optio iusto modi tenetur, ipsa natus quis omnis quibusdam eveniet odit.
+            Provident mollitia quod qui. Laborum culpa, ipsa similique, voluptates laboriosam quia totam ad vero in autem,
+            rem commodi! Incidunt velit architecto esse id repudiandae et numquam ducimus voluptatum dignissimos doloribus
+            iste voluptatem unde quisquam sunt totam optio, corporis ratione voluptas!</p>
+</body>
+
+</html>

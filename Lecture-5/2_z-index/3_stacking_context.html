@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacking Context</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+
+        }
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+
+        
+        /* template starts from here  */
+        /*  */
+        .box-1 {
+            background-color: lightblue;
+            position: relative;
+            top:10rem;
+            z-index:3;
+        }
+        .box-2 {
+            background-color: lightcoral;
+            position: relative;
+            z-index:4;
+        }
+        .box-3 {
+            background-color: lightgreen;
+        }
+        .box-4 {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, autem assumenda! Quis quae labore quo?
+        Blanditiis dicta consectetur quas optio dolor. Eligendi hic eveniet sunt nesciunt sequi unde nobis! At?</p>
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+</body>
+</html>
+
+<!-- 1.positioned elemns are placed closer to the user -->
+<!-- 2. the elem on which position prop is applied later will on top if both the elem are postioned -->
+<!-- z-index : higher the value closer it is to the screen -->
+

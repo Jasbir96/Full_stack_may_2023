@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute relative</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            ;
+            text-align: center;
+        }
+
+        /* template starts from here */
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+            width: 90vw;
+            /* any position prop -> parent */
+            position: absolute;
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+            background-color: lightcoral;
+            /*  you are relative you original pos */
+            /* 1. relative -> your browser still treates like
+            you are occuping your org space
+            */
+            /* position: relative; */
+            /* 2. it pushes you down from your orginal pos*/
+            /* top: 5rem; */
+            /*  it pushes you right from your orginal pos*/
+            /* 2. it pushes you up from your orginal pos*/
+            /* bottom: 5rem; */
+            /*  it pushes you left from your orginal pos*/
+            /* right: 5rem; */
+            /* left: 10rem; */
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+            /* by default -> browser will remove you from current page 
+            next elem to you will occupy your place . You will placed above the later elem
+            */
+            /* position: absolute; */
+            /* opacity: 0; */
+            position: absolute;
+            /* left:20rem; */
+            /* by default -> t  it will take values w.r.t -> page origin */
+            top: 5rem;
+            /* left from top left*/
+            left: 5rem;
+            /* be pushed up from page bottom  */
+            /* bottom: 30px; */
+            /* be pushed up from page bottom right  */
+            /* right: 30px; */
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Position - Absolute, Relative </h2>
+
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- orginal pos -> top left corner of the elem -->
+<!-- # Relative 
+* Browser treats the element is if it still occupies it's original pos
+* Without top, bottom, left, right : element stays at org pos
+    * top : pushes element down from it's original pos
+    * left : pushed element right from it's original pos
+    * right : pushes element left from it's original pos
+    * bottom : pushes element up from it's original pos -->
+
+<!-- # Absolute
+* Browser removes it from the current flow and next element to it will take it's place
+* top, left, right, bottom
+* Default
+* top and left -> top left corner
+* bottom -> bottom part of the page
+* right -> right part of the page -->

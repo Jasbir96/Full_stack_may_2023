@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .parent {
+        height: 30rem;
+        width: 32rem;
+        background-color: rebeccapurple;
+    }
+
+    .child {
+        color: rgb(179, 40, 40);
+        font-size: 2rem;
+        background-color: lightcoral;
+        font-weight: bold;
+        border: 1px solid green;
+        font-family: sans-serif;
+    }
+
+    /* template starts from here */
+    .parent {
+        /* parent */
+        display: flex;
+        /* vertically */
+        /* align-items: stretch; */
+        /* move you vertically to top of the parent */
+        /* align-items: flex-start; */
+        /* move you vertically to bottom of the parent */
+        /* align-items: flex-end; */
+        /* align-items: baseline; */
+
+        /* if i put some height */
+        /* vertically -> all props will work 
+        but baseline will not be strech
+        */
+    }
+
+    /* justify content 
+    is used to move content horizonatllay
+    */
+    .parent {
+        /* justify-content: flex-start; */
+        /* push you horizontally end to to px */
+        /* justify-content: flex-end;
+        justify-content: center;
+        justify-content: space-evenly;
+        justify-content: space-between; */
+        /* justify-content: space-around; */
+    }
+
+    .parent {
+        /* it moves the all the element in subseqent rows */
+        flex-wrap: wrap;
+        justify-content: center;
+        /* it is used to put spacing b/w elements  */
+        gap:10px;
+    }
+
+    .child {
+        width: 14rem;
+        height: 10rem;
+    }
+</style>
+
+<body>
+    <h2>Flexbox Example</h2>
+    <div class="parent">
+        <div class="child one">I am child special
+            and i am being
+        </div>
+        <div class="child two ">I am child</div>
+        <div class="child three"> I am child</div>
+    </div>
+</body>
+
+</html>
+
+<!-- default -> display : flex -->
+<!-- children -> aligned one after another -->
+<!--  the will take whole height and whole width
+of the parent
+-->
+
+
