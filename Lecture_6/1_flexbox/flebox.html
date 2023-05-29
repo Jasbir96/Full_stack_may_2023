@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .parent,
+    .parent1,
+    .parent2 {
+        height: 30rem;
+        width: 32rem;
+        background-color: rgb(176, 141, 211);
+    }
+
+    .child,
+    .child1,
+    .child2 {
+        color: rgb(179, 40, 40);
+        font-size: 2rem;
+        background-color: lightcoral;
+        font-weight: bold;
+        border: dashed;
+        font-family: sans-serif;
+    }
+
+    /******************template starts from here ************/
+    .parent {
+        display: flex;
+        /* align items -> vertical */
+        /* default */
+
+        align-items: center;
+        align-items: flex-start;
+        align-items: flex-end;
+        /* available in justify content */
+        align-items: stretch; 
+        align-items: baseline;
+    }
+
+    .parent {
+        /* works -> horizontally */
+/* to apply justify content -> some space left */
+        justify-content: center;
+        justify-content: flex-end;
+        justify-content: flex-start;
+        /* are not available -> align */
+        justify-content: space-around;
+        justify-content: space-between;
+        justify-content: space-evenly;
+    }
+    /*******************************/
+    .child1 {
+        width: 9rem;
+        height: 10rem;
+    }
+
+    /* *************with height and width*********/
+
+    .parent1 {
+        display: flex;
+        /* align items -> vertical*/
+        /* default */
+        /* align-items: stretch; */
+        /* align-items: center; */
+        /* align-items: flex-start; */
+        /* align-items: flex-end; */
+        /* align-items: baseline; */
+    }
+
+    .parent1 {
+        /* horizonatal alignment */
+        justify-content: center;
+        /* justify-content: flex-end; */
+        /* justify-content: flex-start; */
+        /* justify-content: space-evenly;
+        justify-content: space-between; */
+        /* justify-content: space-around; */
+    }
+/* combined  width of childrens more then parent */
+.child2{
+    /* width of children is just a directive-> 
+    box has enough space then it will allow the boxes 
+    to have there desired width */
+    width:12rem;
+    height: 10rem;
+}
+.parent2{
+    display: flex;
+    flex-wrap: wrap;
+    /*they apply rowise   */
+    justify-content: center;
+    align-items: flex-end;
+    /* gives space between flex childrens  */
+    gap: 1rem;
+
+}
+
+</style>
+
+<body>
+    <h2>Flexbox Example</h2>
+    <h3>Without Height and width</h3>
+  
+    <div class="parent">
+        <div class="child one">I am child special
+            and i am being
+        </div>
+        <div class="child two ">I am child</div>
+        <div class="child three"> I am child</div>
+    </div>
+    <br>
+
+
+
+
+
+
+    <!-- ******************************************** -->
+    <h3>With Height and width</h3>
+    <div class="parent1">
+        <div class="child1 one">I am child special
+
+        </div>
+        <div class="child1 two ">I am child</div>
+        <div class="child1 three"> I am child</div>
+    </div>
+    <br>
+    <!-- ******************************************** -->
+    <h3>Flex Wrap</h3>
+    <div class="parent2">
+        <div class="child2 one">I am child special
+            and i am being
+        </div>
+        <div class="child2 two ">I am child</div>
+        <div class="child2 three"> I am child</div>
+        <!-- <div class="child2 three"> I am child</div> -->
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+
+
+<!--  horizonatal alignment : give some with children
+and have some space 
+width that you give will be adjusted 
+-->

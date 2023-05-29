@@ -1,0 +1,49 @@
+/*0-650  */
+@media only screen and (max-width:650px) {
+  html {
+      font-size: 16px;
+    }
+}
+
+/* 650-900 */
+@media only screen and (max-width:900px) {
+  html {
+    font-size:10px;
+  }
+
+
+  .howto-container {
+    flex-direction: column;
+  }
+
+  .steps-container {
+    margin-top: 4rem;
+  }
+
+  .step-val {
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-radius: 50%;
+    border-style: solid;
+    font-size: 150%;
+  }
+
+  .signup-child {
+    transform: scale(1.0);
+    margin-bottom: 2rem;
+  }
+
+
+
+
+}
+
+/* 900-1100px */
+@media only screen and (max-width:1100px) {
+
+  html {
+      font-size: 30px;
+    }
+}

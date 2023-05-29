@@ -1,0 +1,318 @@
+/* **************************header********************* */
+header,
+.comments {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.849)),
+    url(../img/foodiesfeed.com_pizza-ready-for-baking.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  height: 80vh;
+  background-attachment: fixed;
+  position: relative;
+}
+/* first */
+.navigation {
+  display:flex;
+  justify-content: flex-end;
+  gap:1rem;
+}
+
+.nav-line {
+  font-size: 120%;
+  margin-top: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid transparent;
+}
+
+.nav-line:last-child {
+  margin-right: 1.5rem;
+  ;
+}
+
+.white-anchors {
+  color: white;
+}
+
+.nav-line:hover {
+  border-bottom: 0.1rem solid #f63854;
+}
+
+.showcase {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+
+.main-heading {
+  line-height: 140%;
+  word-spacing: 0.2rem;
+  font-size: 350%;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+
+.developer {
+  color: #f63854;
+  font-weight: bold;
+
+}
+
+.sticky {
+  background-color: black;
+  transition: 1s;
+  width: 100%;
+  padding-bottom: 1rem;
+  position: fixed;
+  z-index: 100;
+}
+
+.btns {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+/* *******************************Features Section***************/
+.feature-para {
+  line-height: 145%;
+}
+
+
+.icon {
+  margin-left: 40%;
+  color: #f63854;
+  font-size: 300%;
+  margin-bottom: 0.9rem;
+}
+
+
+.heading-para {
+  font-size: 130%;
+  padding: 0 8rem;
+  margin-bottom: 2rem;
+}
+/* ************Steps to follow section***************************/
+.How-to {
+  background-color: rgb(244, 244, 244);
+}
+
+.howto-container {
+  display: flex; 
+  justify-content: center;
+  gap: 5%;
+  align-items: center;
+}
+
+.iphone-img {
+  width: 20%;
+}
+
+/*  4.*/
+.step-container {
+  height: 25%;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step-val {
+  color: #f63854;
+  height: 4rem;
+  width: 4rem;
+  border-color: #f63854;
+  text-align: center;
+  padding-top: 0.7rem;
+  border-radius: 50%;
+  border-style: solid;
+  font-size: 180%;
+}
+
+.howto-para {
+  width: calc(100% - 5rem)
+}
+
+/* ******************************reviews *******************************************************/
+
+.customer-img {
+  border-radius: 50%;
+  height: 4rem;
+}
+
+cite {
+  display: block;
+  margin-top: 1rem;
+}
+
+.comments-container {
+  background-color: azure;
+  text-align: center;
+  width: 28%
+}
+
+.comments__name {
+  color: black;
+  text-transform: uppercase;
+  font-size: 140%;
+ 
+  padding: 1rem;
+}
+
+.comments-container p {
+ 
+  padding-bottom: 1rem;
+}
+
+.small-icon {
+  color: #f63854;
+  margin-right: 1rem;
+}
+
+/************************************Plans****************************************************/
+.signup {
+  background-color: #f4f4f4;
+}
+
+.signup-child {
+  border-width: 1px;
+  border-color: rgb(134, 143, 161);
+  border-style: solid;
+  border-radius: 4%;
+  width: 29%;
+  font-size: 120%;
+  min-width: 25rem;
+}
+
+.signup-features ul {
+  text-align: left;
+  line-height: 200%;
+  border-bottom: 1px solid rgb(134, 143, 161);
+  margin: 1rem;
+}
+
+.signup-header {
+  padding: 3%;
+  border-bottom: 1px solid rgb(134, 143, 161);
+  line-height: 265%;
+  margin: 1rem;
+}
+
+.signup-button {
+  text-align: center;
+  position: relative;
+  top: 1.5rem;
+}
+
+.pricing {
+  font-size: 300%;
+  color: #f63854;
+}
+
+.signup-child {
+  transform: scale(0.8);
+}
+
+.active {
+  box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
+  transform: scale(0.95);
+}
+
+/* *****************************form*******************************/
+.contact_us {
+  background-color: #212529;
+}
+
+.form_parent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.bg-video__content {
+  width: 35%;
+  position: relative;
+  top: 3rem;
+}
+
+form {
+  width: 45%;
+}
+
+.entry-text {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  border: 2px solid grey;
+  border-radius: 3%;
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+textarea {
+  height: 5rem;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 5%;
+}
+
+.checkbox-conditions {
+  margin-left: 1%;
+}
+
+.btn-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ***********************************footer****************************/
+footer {
+  background-color: rgb(58, 56, 56);
+  height: 11rem;
+}
+
+.social-link {
+  display: flex;
+  width: 40%;
+}
+
+.text-value {
+  padding-right: 6%;
+}
+.footer-text {
+  display: flex;
+  width: 70%;
+  padding-right: 6%;
+}
+
+.footer-parent {
+  display: flex;
+  padding-top: 3%;
+  padding-left: 4%;
+}
+.text-value a,
+.icon-footer {
+  font-size: 160%;
+  color: white;
+}
+
+.social-link li {
+  padding-right: 10%;
+}
+
+.footer-p {
+  text-align: center;
+  margin-top: 2%;
+  font-size: 140%;
+}

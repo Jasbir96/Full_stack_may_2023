@@ -1,0 +1,18 @@
+/* ************resets*****************/
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    font-size: 16px;
+    color: gray;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
