@@ -1,0 +1,35 @@
+<!-- it will help in saving bandwidth -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  img {
+    width: 100%;
+  }
+</style>
+
+<body>
+  <h1>Responsive Image Example</h1>
+  <!-- borwser -> choice -> decide when to load which image
+  easily -> bandwidth
+  -->
+  <img src="./Capture.jpg" alt=""
+  srcset="
+  ./Capture_large.jpg 3x,
+  ./Capture_medium.jpg 2x,
+  ./Capture_small.jpg 1x"
+  >
+
+  <img src="./Capture.jpg" alt="" srcset="
+    ./Capture_large.jpg 1200w,
+    ./Capture_medium.jpg 900w,
+    ./Capture_small.jpg 400w">
+</body>
+
+</html>
