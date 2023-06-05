@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+    }
+
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 1fr 8fr 1fr;
+        grid-template-columns: 1fr 5fr 1fr 1fr;
+        background-color: lightcoral;
+        grid-template-areas: 
+        "head head head head"
+        "nav  main side1 side2"
+        "nav  foot foot  foot"
+        ;
+    }
+    header,nav,main, aside, footer{
+        font-size: 1.5rem;;
+        border:1px solid ;
+    }
+
+
+header{
+    /* grid-row-start: 1;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end: 5; */
+    grid-area: head;
+}
+nav{
+    /* grid-row:2/4;
+    grid-column:1/2 */
+    grid-area: nav;
+}
+.sidebar1{
+    grid-area: side1;
+}
+
+.sidebar2{
+    grid-area: side2;
+}
+footer{
+    grid-area:foot
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <header> header</header>
+        <nav>Navigation Bar</nav>
+        <main>Main content</main>
+        <aside class="sidebar_1">Sidebar 1</aside>
+        <aside class="sidebar_2">Sidebar 2</aside>
+        <footer>footer</footer>
+
+
+    </div>
+</body>
+
+</html>

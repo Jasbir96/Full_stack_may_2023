@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .container {
+            height: 100vh;
+            /* width:70vh; */
+         
+            /* display: block; */
+            display: grid;
+            grid-template-rows: 100px 100px 100px ;
+            grid-template-columns: 100px 100px 100px;
+            /* gaps */
+            row-gap: 10px;
+            column-gap: 10px;
+            /* shorthand for above 2 gap */
+            gap: 10px 10px;
+
+            /* better way -> multiple screens */
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            /* grid-template-rows: repeat(3, 1fr); */
+            /* grid-template-columns: repeat(4, 2fr) 3fr; */
+            /* shorthand for above 2  */
+            /* grid-template: repeat(5, 1fr)/repeat(5, 1fr); */
+
+            /*  to move every element in a certain */
+            align-items: center;
+            justify-items: center;
+        }
+
+        /* vehicle */
+        .item-first {
+            background-color: lightgreen;
+            /* grid-row-start:2;
+            grid-column-start:2;
+            grid-column-end: 4;
+            grid-row-end: 4; */
+
+            /* grid-row-start: 2;
+            grid-column-start: 4;
+            grid-column-end:6;
+            grid-row-end: 4; */
+            grid-row: 2/4;
+            grid-column: 4/6;
+
+            /* justify -> move yourself horizontally */
+            /* justify-self: center; */
+            /* align -> vertically */
+            /* align-self: center; */
+/* with height the element get's desired h/w while horizontally and vertically alogned  */
+            height: 200px;
+            width: 100px;
+
+        }
+
+        .item-second {
+            background-color: lightblue;
+            grid-row: 2/4;
+            grid-column: 1/2;
+            /* justify-self:flex-end ; */
+            /* align-self: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item-first">Item One </div>
+        <div class="item-second">Item One </div>
+    </div>
+</body>
+
+</html>

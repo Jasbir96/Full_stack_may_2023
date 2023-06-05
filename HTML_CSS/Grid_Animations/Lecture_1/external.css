@@ -1,0 +1,14 @@
+ @media only screen and (max-width:650px) {
+.container {
+        height: 100vh;
+        grid-template-rows: 5;
+        grid-template-columns: 2;
+        grid-template-areas:
+            "head head "
+            "side side"
+            "content1 content1"
+            "content2 content3"
+            "footer footer "
+        ;
+    }
+ }

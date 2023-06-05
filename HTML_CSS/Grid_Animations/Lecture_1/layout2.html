@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        
+    }
+    .container>*{
+        border:1px solid red;
+    }
+    .container{
+        display: grid;
+        background-image: lightblue;
+        height:100vh;
+        grid-template-rows: 4;
+        grid-template-columns: 3;
+        grid-template-areas:
+        "head head head"
+        "side content1 content1"
+        "side content2 content3"
+        "footer footer footer"
+        ;
+    }
+
+    header{
+        grid-area:head;
+    }
+    aside{
+        grid-area: side;        
+    }
+    main{
+        grid-area: content1;
+    }
+    .content1{
+        grid-area: content2;
+
+    }
+    .content2{
+        grid-area: content3;
+
+    }
+    footer{
+        grid-area: footer;
+    }
+
+   
+</style>
+<link rel="stylesheet" href="external.css">
+<body>
+    
+    <div class="container">
+
+        <header>Header</header>
+        <aside>Sidebar</aside>
+        <main>Content1</main>
+        <div class="content1">COntent1</div>
+        <div class="content2">content2</div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
