@@ -1,0 +1,44 @@
+body {
+    background-color: #add8e6;
+    height: 100vh
+}
+
+::-moz-placeholder {
+    color: #90ee90
+}
+
+::placeholder {
+    color: #90ee90
+}
+
+h1 {
+    font-size: 3rem;
+    -webkit-text-decoration: underline;
+    text-decoration: underline
+}
+
+h1,
+h2,
+h3 {
+    background-color: #006400
+}
+
+h1 {
+    color: #98483f
+}
+
+h2 {
+    color: #98483f
+}
+
+.card {
+    background-color: #8a2be2;
+    border: 2px solid gray;
+    height: 10rem;
+    width: 10rem
+}
+
+.card h2 {
+    background-color: #fff;
+    color: green
+}

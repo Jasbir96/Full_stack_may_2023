@@ -1,0 +1,22 @@
+{
+  "name": "lecture_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildcss": "postcss src/input.css -o dest/output.css",
+    "watchcss": "postcss src/input.css -o dest/output.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-preset-env": "^8.4.2",
+    "precss": "^4.0.0"
+  }
+}

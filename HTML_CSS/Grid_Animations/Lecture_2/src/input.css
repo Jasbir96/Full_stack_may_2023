@@ -1,0 +1,41 @@
+@custom-selector :--mainheading h1,h2,h3;
+
+$red:#98483f;
+
+
+body{
+    height:100vh;
+    background-color: lightblue;
+}
+/* pseudo selector */
+::placeholder{
+    color:lightgreen;
+}
+h1{
+    font-size: 3rem;;
+    text-decoration: underline;
+}
+
+:--mainheading{
+    background-color: darkgreen;
+}
+
+h1{
+color:$red;
+color:
+}
+h2{
+    color: $red;
+}
+
+.card{
+    height:10rem;
+    width:10rem;
+    background-color: blueviolet;
+    border:2px solid gray;
+    h2{
+     color:green ;  
+     background-color:white;
+    }
+}
+
