@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+        /* using grid  */
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        animation: rotate-parent 5s infinite alternate,
+            color-parent 2s infinite ;
+        animation-timing-function: linear;
+
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        /* animation -> 4s */
+        animation-duration: 5s;
+        /* animation-name:shape-changer; */
+        /* name to my animation */
+        /* animation-iteration-count: infinite; */
+        position: absolute;
+        border: 3px solid black;
+        animation-name: box-mover;
+        /* animation-iteration-count: infinite; */
+        /* how many times you want animation to happen-> default -> 1, accepts -> nums/infinite */
+        animation-iteration-count: infinite;
+        /* after each iteration which direction your animation should  */
+        animation-direction: alternate;
+        /* if animation iteration is not inifinte -> where you want your animation to end */
+        animation-fill-mode: forwards;
+        /* speed of animation */
+        animation-timing-function: linear;
+    }
+
+    @keyframes box-mover {
+        0% {
+            top: 0px;
+            left: 0px;
+        }
+
+        33% {
+            top: 100%;
+            left: 0%;
+            transform: translateY(-100%);
+            border-radius: 20%;
+        }
+
+        66% {
+            top: 100%;
+            left: 100%;
+            ;
+            transform: translate(-100%, -100%);
+            border-radius: 50%
+        }
+
+        100% {
+
+            top: 0%;
+            left: 100%;
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes rotate-parent {
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+
+    @keyframes  color-parent {
+        to{
+            background-color:white;
+        }
+        
+    }
+
+
+
+
+    @keyframes shape-changer {
+        50% {
+            border-radius: 50%;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

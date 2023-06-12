@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+   
+   /* flex  */
+        /* display: flex;
+    justify-content: center;
+    align-items: center;; */
+
+    /* using grid  */
+    /* display:grid; */
+    /* justify-items: center;
+    align-items: center;; */
+    /* place-items: center; */
+    position: relative;
+    }
+    .box {
+        height: 100px;
+        width:100px;
+        background-color: hotpink;
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%) translateY(-50%);
+        top:50%;
+        /* transform: translateY(-50%); */
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

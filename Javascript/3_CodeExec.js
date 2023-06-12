@@ -10,8 +10,6 @@
 // }
 // fn()
 
-
-
 // Code Excution : always exec in EC
     // GLobal code -> GEC
     // insidee fn -> own EC
