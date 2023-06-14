@@ -1,0 +1,186 @@
+/* reset css */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    /* distance b/w two lines of text */
+    line-height: 1.5;
+    /* boldness */
+    font-weight: 400;
+    /* distance between each letter */
+    letter-spacing: -0.022em;
+    /* used to  make the font smoother */
+    -webkit-font-smoothing: antialiased;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+
+/* ******************* */
+
+
+/* components */
+.btn {
+    /* padding: .3rem .5rem; */
+    padding: 0.5rem 0.8rem;
+    background-color: #0071e3;
+    color: white;
+    border-radius: 980px;
+    font-size: 0.8;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    border: 0px;
+    /* centrally align in menu_wrapper */
+    align-self: center;
+}
+
+/* ************************ */
+/* generic stylings */
+.nav_wrapper,
+.feature_wrapper,
+.save_on_iphone_wrapper {
+    max-width: 980px;
+    /* this means  */
+    /* vertically -> margin -> 0 */
+    /* horziontal margin -> hungry margin taker */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: green; */
+
+}
+
+
+/* nav styling  */
+
+
+nav {
+    border-bottom: 2px solid rgba(211, 211, 211, 0.786);
+    position: fixed;
+    width:100%;
+    background-color: white;
+    z-index:3;
+}
+
+
+.nav_wrapper {
+    height: 3.5rem;
+}
+
+.nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu_wrapper {
+    display: flex;
+    height: 100%;
+    gap: 2rem;
+}
+
+.menu_wrapper--ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
+
+
+/* main part*/
+
+/* features section */
+.feature_wrapper {
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    /* 20 px of vertical/horziontal */
+    gap: 20px;
+    /* automatically create rows of 18.82rem */
+    grid-auto-rows: 18.82rem;
+    grid-template-areas:
+        "iphone_sizes iphone_sizes iphone_battery"
+        "iphone_sizes iphone_sizes iphone_shield"
+        "water_resistance action_mode action_mode"
+        "bionic_chip pro_camera pro_camera"
+        "super_speed pro_camera pro_camera"
+    ;
+}
+
+.action_mode {
+    grid-area: action_mode;
+}
+
+.bionic_chip {
+    grid-area: bionic_chip;
+}
+
+.pro_camera {
+    grid-area: pro_camera;
+}
+
+.super_speed {
+    grid-area: super_speed;
+}
+
+.water_resistant {
+    grid-area: water_resistance;
+}
+
+
+
+.iphone_sizes {
+    grid-area: iphone_sizes;
+}
+
+.iphone_battery {
+    grid-area: iphone_battery;
+}
+
+.ceramic_shield {
+    grid-area: iphone_shield;
+}
+
+
+
+.init_card {
+    background-color: rgb(246, 241, 241);
+    border-radius: 25px;
+}
+
+/* save to iphone */
+
+.card_group {
+    display: grid;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fill, 16rem);
+}
+.card {
+    background-color: rgb(246, 241, 241);
+    /* padding: 2rem; */
+    width: 30%;
+    min-width: 18rem;
+}
