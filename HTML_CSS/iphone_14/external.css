@@ -54,7 +54,10 @@ body {
 /* generic stylings */
 .nav_wrapper,
 .feature_wrapper,
-.save_on_iphone_wrapper {
+.save_on_iphone_wrapper,
+.hero_continer,
+.hero_nav,
+.hero_container {
     max-width: 980px;
     /* this means  */
     /* vertically -> margin -> 0 */
@@ -64,6 +67,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     /* background-color: green; */
+    padding: 0 2rem;
 
 }
 
@@ -74,9 +78,9 @@ body {
 nav {
     border-bottom: 2px solid rgba(211, 211, 211, 0.786);
     position: fixed;
-    width:100%;
+    width: 100%;
     background-color: white;
-    z-index:3;
+    z-index: 3;
 }
 
 
@@ -107,7 +111,122 @@ nav {
 
 
 
-/* main part*/
+/******************main section*/
+
+
+
+
+
+/* ****************ribbon_container ********/
+
+.ribbon_container {
+    background-color: #f5f5f7;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    /* centrally aliogn text */
+    text-align: center;
+}
+
+
+
+.ribbon_para {
+    color: #1d1d1f;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    letter-spacing: .014em;
+}
+
+.ribbon_para span {
+    color: #0071e3;
+}
+
+
+/* navbar */
+.hero_nav {
+    /* background-color: lightgreen; */
+    height: 3rem;
+    /* relative element -> it touches  */
+    position: sticky;
+    /* threshold while beign scrolled -> it becomes fixed */
+    top: 3.5rem;
+    padding-top: 1.5rem;
+}
+
+
+.hero_nav--container {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    /* background-color: lightblue; */
+}
+
+.color_picker {
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.color_picker.midnight {
+    background-color: #31353a;
+}
+
+.color_picker.starlight {
+    background-color: #f0ece8;
+    /* border: 0.5px solid rgba(128, 128, 128, 0.522)  */
+}
+
+.color_picker.red {
+    /* background-color: black; */
+    background-color: #e11c2a;
+}
+
+.color_picker.blue {
+    /* background-color: black; */
+    background-color: #c0cfde;
+}
+
+.color_picker.purple {
+    /* background-color: black; */
+    background-color: #e7d7e9;
+
+}
+
+.selected--color {
+    border: 4px solid #699cd0;
+    height: 1.4rem;
+    width: 1.4rem;
+}
+
+
+
+/* **********hero*********** */
+.hero {
+    position: relative;
+    top: -3.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* hero */
+.hero_showcase--header {
+    font-size: 4.3rem;
+    font-weight: 500;
+}
 
 /* features section */
 .feature_wrapper {
@@ -178,6 +297,7 @@ nav {
     /* flex-wrap: wrap; */
     grid-template-columns: repeat(auto-fill, 16rem);
 }
+
 .card {
     background-color: rgb(246, 241, 241);
     /* padding: 2rem; */
