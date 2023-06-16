@@ -1,0 +1,223 @@
+/* hero section  */
+.hero_crousel_container {
+    width: 1144px;
+    height: 574px;
+
+    position: relative;
+    /* center horizontally */
+
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    /* animation acche se ho  */
+    transform-origin: 50% 50%;
+    /* cubic beizer is of no use */
+    transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    /**************optimiziation *********/
+    /* visibility: visible; */
+    /* will-change: transform, scale; */
+    /* backface-visibility: hidden; */
+    /* debugging */
+    /* background-color: rgba(144, 238, 144, 0.097); */
+}
+.crousel_iphone {
+    transform-origin: 0 0;
+    position: absolute;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* background repeat */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-repeat: no-repeat;
+
+    /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
+    /* will-change: transform, opacity, scale; */
+
+}
+
+.crousel_iphone.midnight {
+    left: 8px;
+    top: 233px;
+
+    width: 532px;
+    height: 562px;
+
+    background-size: 532px 562px;
+    background-image: url('assets/hero/hero_midnight__sg7l40u32uim_small_2x.jpg');
+
+    -webkit-mask-size: 532px 562px;
+    mask-size: 532px 562px;
+
+    -webkit-mask-image: url('assets/hero/hero_midnight_mask__bz1xq6feycr6_small_2x.png');
+    mask-image: url('assets/hero/hero_midnight_mask__bz1xq6feycr6_small_2x.png');
+
+    transform: scale(0.51, 0.51);
+
+}
+
+.crousel_iphone.starlight {
+    left: 111px;
+    top: 118px;
+
+    width: 518px;
+    height: 582px;
+
+    background-size: 518px 582px;
+    background-image: url('assets/hero/hero_starlight__fnug85nckkuq_small_2x.jpg');
+
+    -webkit-mask-size: 518px 582px;
+    mask-size: 518px 582px;
+    -webkit-mask-image: url('assets/hero/hero_starlight_mask__d1d5xraosdci_small_2x.png');
+    mask-image: url('assets/hero/hero_starlight_mask__d1d5xraosdci_small_2x.png');
+    transform: scale(0.52, 0.52);
+}
+
+.crousel_iphone.red {
+    left: 259px;
+    top: 49px;
+    width: 450px;
+    height: 568px;
+
+    background-size: 450px 568px;
+    background-image: url('assets/hero/hero_red__z83xubxufc2i_small_2x.jpg');
+
+    -webkit-mask-size: 450px 568px;
+    mask-size: 450px 568px;
+    -webkit-mask-image: url('assets/hero/hero_red_mask__00yd3q95bn6q_small_2x.png');
+    mask-image: url('assets/hero/hero_red__z83xubxufc2i_small_2x.jpg');
+    transform: scale(0.54, 0.54);
+}
+
+.crousel_iphone.blue {
+
+    left: 437px;
+    top: 22px;
+    width: 366px;
+    height: 578px;
+
+    background-size: 366px 578px;
+    background-image: url('assets/hero/hero_blue__n9fnkto95n2q_small_2x.jpg');
+
+    -webkit-mask-size: 366px 578px;
+    mask-size: 366px 578px;
+    -webkit-mask-image: url('assets/hero/hero_blue_mask__fvfth8khup6q_small_2x.png');
+    mask-image: url('assets/hero/hero_blue_mask__fvfth8khup6q_small_2x.png');
+    transform: scale(0.573, 0.573)
+}
+
+.crousel_iphone.purple {
+
+    left: 629px;
+    top: 18px;
+    width: 336px;
+    height: 620px;
+
+    background-size: 336px 620px;
+    background-image: url('assets/hero/hero_purple__bs5nrbl1uw3m_small_2x.jpg');
+
+    -webkit-mask-size: 336px 620px;
+    mask-size: 336px 620px;
+    -webkit-mask-image: url('assets/hero/hero_purple_mask__d3s7h46n9jue_small_2x.png');
+    mask-image: url('assets/hero/hero_purple_mask__d3s7h46n9jue_small_2x.png');
+    transform: scale(0.67, 0.67);
+
+}
+
+.crousel_iphone.yellow {
+
+    left: 781px;
+    top: 68px;
+
+    width: 428px;
+    height: 616px;
+
+    background-size: 428px 616px;
+    background-image: url('assets/hero/hero_yellow__d3aifvttsuuu_small_2x.jpg');
+    -webkit-mask-size: 428px 616px;
+    mask-size: 428px 616px;
+
+    -webkit-mask-image: url('assets/hero/hero_yellow_mask__bu4n4noy3bqu_small_2x.png');
+    mask-image: url('assets/hero/hero_yellow_mask__bu4n4noy3bqu_small_2x.png');
+    /* this is for selected to keep the selected item at center */
+    transform: scale(0.86, 0.86);
+}
+
+
+
+/* children movement */
+.selected--iphone.yellow {
+    transform: translate(0.6077686218%, -3.4468271355%) scale(0.88) !important;
+}
+
+.selected--iphone.purple {
+    transform: translate(-0.4871058534%, -3.4659382406%) scale(0.683) !important;
+}
+
+.selected--iphone.blue {
+    transform: translate(-0.4871058534%, -3.4659382406%) scale(0.59) !important;
+}
+
+.selected--iphone.starlight {
+    transform: translate(-2.2962066015%, -2.6414835308%) scale(0.54) !important;
+}
+
+.selected--iphone.moonlight {
+    transform: translate(-2.9681683365%, -1.8547174248%) scale(0.527) !important;
+
+}
+
+/* individual tranform values 
+
+
+
+yellow-> transform: translate(-0.4871058534%, -3.4659382406%) scale(0.59) !important;
+purple -> transform: translate(-0.4871058534%, -3.4659382406%) scale(0.683) !important;
+blue -> transform: translate(-0.4871058534%, -3.4659382406%) scale(0.59) !important;
+red -> transform: translate(-2.2497566339%, -2.6811555509%) scale(0.54) !important;
+starlight -> transform: translate(-2.2962066015%, -2.6414835308%) scale(0.54) !important;
+moonlight -> transform: translate(-2.9681683365%, -1.8547174248%) scale(0.527) !important;
+*/
+
+
+
+
+
+
+
+
+
+/* parent movement  */
+.hero_crousel_container.midnight {
+    
+    transform: matrix(1.24651, 1.43395, -1.43395, 1.24651, -109.06, 498.232);
+}
+.hero_crousel_container.starlight {
+    transform: matrix(1.50347, 1.10184, -1.10184, 1.50347, -224.817, 414.932);
+}
+
+.hero_crousel_container.red {
+    transform: matrix(1.64561, 0.755092, -0.755092, 1.64561, -364.436, 307.051);
+}
+
+.hero_crousel_container.blue {
+    transform: matrix(1.60574, 0.269279, -0.269279, 1.60574, -510.662, 196.845);
+}
+
+.hero_crousel_container.purple {
+    transform: matrix(1.3532, -0.192071, 0.192071, 1.3532, -649.839, 140.245);
+}
+
+.hero_crousel_container.yellow {
+    transform: matrix(1.04327, -0.464493, 0.464493, 1.04327, -768.586, 130.872);
+}
+
+
+/* * selected : midnight : */
+/* transform: matrix(1.24651, 1.43395, -1.43395, 1.24651, -109.06, 498.232);  
+	* selected : starlight: transform: matrix(1.50347, 1.10184, -1.10184, 1.50347, -224.817, 414.932);
+   * selected : red : transform: matrix(1.64561, 0.755092, -0.755092, 1.64561, -364.436, 307.051); 
+   * selected ; blue : transform: matrix(1.60574, 0.269279, -0.269279, 1.60574, -510.662, 196.845); 
+  * selected : purple : transform: matrix(1.3532, -0.192071, 0.192071, 1.3532, -649.839, 140.245)
+* selected : yellow :transform: matrix(1.04327, -0.464493, 0.464493, 1.04327, -768.586, 130.872); 

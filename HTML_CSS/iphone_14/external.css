@@ -1,139 +1,105 @@
-/* reset css */
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-html {
-    font-size: 16px;
-}
-
+/* *************************/
+/* generic css */
 body {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    /* distance b/w two lines of text */
-    line-height: 1.5;
-    /* boldness */
-    font-weight: 400;
-    /* distance between each letter */
-    letter-spacing: -0.022em;
-    /* used to  make the font smoother */
-    -webkit-font-smoothing: antialiased;
-    width: 100vw;
+
     overflow-x: hidden;
+    width: 100vw;
+    /* fonts */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
+.nav_container,
+.hero_showcase,
+.features_container,
+.ways_to_save,
+.hero_nav {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 3rem;
 
+}
 
-/* ******************* */
+.hero_intro,
+.features {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+}
 
-
-/* components */
 .btn {
-    /* padding: .3rem .5rem; */
-    padding: 0.5rem 0.8rem;
+    padding: .5rem .8rem;
     background-color: #0071e3;
     color: white;
     border-radius: 980px;
-    font-size: 0.8;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: -.01em;
     border: 0px;
-    /* centrally align in menu_wrapper */
-    align-self: center;
 }
 
-/* ************************ */
-/* generic stylings */
-.nav_wrapper,
-.feature_wrapper,
-.save_on_iphone_wrapper,
-.hero_continer,
-.hero_nav,
-.hero_container {
-    max-width: 980px;
-    /* this means  */
-    /* vertically -> margin -> 0 */
-    /* horziontal margin -> hungry margin taker */
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    /* background-color: green; */
-    padding: 0 2rem;
-
+/************navbar section**************/
+h3 {
+    font-size: 1.2rem;
+    line-height: 1.14286;
+    font-weight: 600;
+    letter-spacing: .011em;
 }
-
-
-/* nav styling  */
-
 
 nav {
-    border-bottom: 2px solid rgba(211, 211, 211, 0.786);
+    border-bottom: solid 2px rgba(200, 196, 196, 0.765);
+    background-color: white;
     position: fixed;
     width: 100%;
-    background-color: white;
     z-index: 3;
 }
 
-
-.nav_wrapper {
+.nav_container {
     height: 3.5rem;
-}
-
-.nav_wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    justify-content: space-between;
 }
 
 .menu_wrapper {
     display: flex;
+    gap: 1.2rem;
     height: 100%;
-    gap: 2rem;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -.01em;
 }
 
 .menu_wrapper--ul {
     display: flex;
     gap: 1rem;
-    align-items: center;
 }
 
+.overview_text {
+    opacity: 0.56;
+}
 
-
-
-
-/******************main section*/
-
-
-
-
-
-/* ****************ribbon_container ********/
-
+/* main section */
+/********************ribbon container******/
 .ribbon_container {
     background-color: #f5f5f7;
     padding-top: 5rem;
     padding-bottom: 2rem;
-    /* centrally aliogn text */
-    text-align: center;
 }
-
-
 
 .ribbon_para {
     color: #1d1d1f;
     font-size: 1.2rem;
     line-height: 1.3;
     letter-spacing: .014em;
+    /* to center text */
+    text-align: center;
 }
 
 .ribbon_para span {
@@ -141,32 +107,33 @@ nav {
 }
 
 
-/* navbar */
+/* ****************hero_nav*************/
 .hero_nav {
-    /* background-color: lightgreen; */
-    height: 3rem;
-    /* relative element -> it touches  */
-    position: sticky;
-    /* threshold while beign scrolled -> it becomes fixed */
-    top: 3.5rem;
-    padding-top: 1.5rem;
-}
 
+    margin-top: 1rem;
+    height: 3rem;
+    /* background-color: lightblue; */
+    
+    
+    position: sticky;
+    top: 3.5rem;
+    z-index: 4;
+}
 
 .hero_nav--container {
     display: flex;
-    gap: 5px;
+    gap: 0.3rem;
     justify-content: flex-end;
-    height: 100%;
     align-items: center;
-    /* background-color: lightblue; */
+    height: 100%
 }
 
 .color_picker {
     height: 1.2rem;
     width: 1.2rem;
-    border-radius: 50%;
     background-color: gray;
+    border-radius: 50%;
+
 }
 
 .color_picker.midnight {
@@ -181,6 +148,7 @@ nav {
 .color_picker.red {
     /* background-color: black; */
     background-color: #e11c2a;
+
 }
 
 .color_picker.blue {
@@ -194,79 +162,91 @@ nav {
 
 }
 
-.selected--color {
-    border: 4px solid #699cd0;
-    height: 1.4rem;
-    width: 1.4rem;
+.color_picker.yellow {
+    /* background-color: black; */
+    background-color: #f5e488;
+
 }
 
+.selected--color {
+    border: 4px solid #699cd0;
+    height: 1.3rem;
+    width: 1.3rem;
 
+}
 
-/* **********hero*********** */
+/**********hero showcase section*********** */
 .hero {
     position: relative;
     top: -3.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* hero */
 .hero_showcase--header {
     font-size: 4.3rem;
     font-weight: 500;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *******hero intro*******/
+.hero_intro {
+    padding: 4.5rem 0;
+    text-align: center;
+    color: #1d1d1f;
+}
+
+.intro_headline,
+.ways_to_save--header {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.hero_intro--para {
+    font-size: 1.1rem;
+    line-height: 1.4211026316;
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.btn_large {
+    margin-top: 2rem;
+    transform: scale(1.5);
+}
+
 /* features section */
-.feature_wrapper {
-    padding-top: 3rem;
+.features_container {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    /* 20 px of vertical/horziontal */
-    gap: 20px;
-    /* automatically create rows of 18.82rem */
     grid-auto-rows: 18.82rem;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 20px;
     grid-template-areas:
         "iphone_sizes iphone_sizes iphone_battery"
-        "iphone_sizes iphone_sizes iphone_shield"
+        "iphone_sizes iphone_sizes ceramic_shield"
         "water_resistance action_mode action_mode"
         "bionic_chip pro_camera pro_camera"
         "super_speed pro_camera pro_camera"
-    ;
+        "emergency_sos emergency_sos crash_detection"
+        "personalization personalization selfies"
+        "personalization personalization selfies"
 }
 
-.action_mode {
-    grid-area: action_mode;
+.init_card {
+    background-color: rgb(246, 241, 241);
+    border-radius: 25px;
 }
-
-.bionic_chip {
-    grid-area: bionic_chip;
-}
-
-.pro_camera {
-    grid-area: pro_camera;
-}
-
-.super_speed {
-    grid-area: super_speed;
-}
-
-.water_resistant {
-    grid-area: water_resistance;
-}
-
-
 
 .iphone_sizes {
     grid-area: iphone_sizes;
@@ -277,30 +257,64 @@ nav {
 }
 
 .ceramic_shield {
-    grid-area: iphone_shield;
+    grid-area: ceramic_shield;
 }
 
-
-
-.init_card {
-    background-color: rgb(246, 241, 241);
-    border-radius: 25px;
+.water_resistant {
+    grid-area: water_resistance;
 }
 
-/* save to iphone */
+.action_mode {
+    grid-area: action_mode
+}
+
+.bionic_chip {
+    grid-area: bionic_chip
+}
+
+.pro_camera {
+    grid-area: pro_camera
+}
+
+.super_speed {
+    grid-area: super_speed;
+}
+
+.emergency_sos {
+    grid-area: emergency_sos;
+}
+
+.crash_detection {
+    grid-area: crash_detection;
+}
+
+.personalization {
+    grid-area: personalization
+}
+
+.selfies {
+    grid-area: selfies;
+}
+
+/* *******features*********** */
+.ways_to_save--header {
+    font-size: 3rem
+}
+
+.ways_to_save--container {
+    padding: 4rem 0;
+    width: 100%;
+}
 
 .card_group {
-    display: grid;
-    justify-content: space-evenly;
     width: 100%;
-    gap: 1rem;
-    /* flex-wrap: wrap; */
+    display: grid;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, 16rem);
+    justify-content: space-evenly;
 }
 
-.card {
+.card_child {
     background-color: rgb(246, 241, 241);
-    /* padding: 2rem; */
-    width: 30%;
-    min-width: 18rem;
+    padding: 1rem;
 }

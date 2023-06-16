@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- include google fonts -->
-    <!--  -->
+    <title>Custom Crousel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="external.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./external.css">
+    <link rel="stylesheet" href="./crousel.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <!-- semantics -->
     <nav>
-
-        <div class="nav_wrapper">
+        <div class="nav_container">
             <h3>iPhone 14</h3>
             <div class="menu_wrapper">
                 <ul class="menu_wrapper--ul">
@@ -28,11 +27,17 @@
                 </ul>
                 <button class="btn">Buy</button>
             </div>
+        </div>
     </nav>
+
+
+
+
+
+
+
+
     <main>
-
-
-
         <section class="ribbon_container">
             <p class="ribbon_para">
                 Get $200–$630 in credit toward iPhone 14 when you
@@ -42,12 +47,10 @@
                 <span>Shop iPhone</span>
             </p>
         </section>
-
+        <!-- code is only changed between these two lines only -->
         <div class="hero_nav">
-            <!-- listener -> ul -->
             <ul class="hero_nav--container">
-                <li class="color_picker midnight
-                "></li>
+                <li class="color_picker midnight"></li>
                 <li class="color_picker starlight"></li>
                 <li class="color_picker red"></li>
                 <li class="color_picker blue"></li>
@@ -55,75 +58,97 @@
                 <li class="color_picker yellow "></li>
             </ul>
         </div>
-
-
-
-
-        <div class="hero">
-            <div class="hero_container">
+        <section class="hero">
+            <div class="hero_showcase">
                 <h2 class="hero_showcase--header">Wonderfull.</h2>
-                <div class="hero_showcase">
-                    
+                <div class="hero_crousel_container">
+                    <figure class="crousel_iphone midnight "></figure>
+                    <figure class="crousel_iphone starlight "></figure>
+                    <figure class="crousel_iphone red "></figure>
+                    <figure class="crousel_iphone blue "></figure>
+                    <figure class="crousel_iphone purple "></figure>
+                    <figure class="crousel_iphone yellow"></figure>
                 </div>
             </div>
-        
-        </div>
-
-        <section class="features">
-            <div class="feature_wrapper">
-                <section class="iphone_sizes init_card"> Iphone Size
-                </section>
-                <section class="iphone_battery init_card"> Battery
-                </section>
-                <section class="ceramic_shield init_card"> Ceramic
-                </section>
-                <section class="water_resistant init_card">
-                    water Resistant
-                </section>
-                <section class="action_mode init_card">
-                    action mode
-                </section>
-                <section class="bionic_chip init_card">
-                    bionic chip
-                </section>
-                <section class="pro_camera init_card">
-                    pro_camer
-                </section>
-                <section class="super_speed init_card">
-                    super speed
-                </section>
-            </div>
-
         </section>
+        <!-- code is only changed between these two lines only -->
 
-        <section class="save_on_iphone">
-            <div class="save_on_iphone_wrapper">
-                <h2>Ways to save on Iphone</h2>
-                <div class="card_group">
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium delectus sed obcaecati
-                            provident necessitatibus animi sint voluptates, fuga suscipit. Tempore harum adipisci culpa
-                            aliquid! Accusamus vel nobis officiis illo quod.</p>
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium delectus sed obcaecati
-                            provident necessitatibus animi sint voluptates, fuga suscipit. Tempore harum adipisci culpa
-                            aliquid! Accusamus vel nobis officiis illo quod.</p>
-                    </div>
-                    <div class="card">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium delectus sed obcaecati
-                            provident necessitatibus animi sint voluptates, fuga suscipit. Tempore harum adipisci culpa
-                            aliquid! Accusamus vel nobis officiis illo quod.</p>
-                    </div>
-                </div>
+<!-- 
+* Ribbon container
+* Navbar
+    * css -> flex
+    * selector class -> css
+    * JS -> explaination
+    * position sticky
+    * crousel working
+    * Intuiton : things that are changing
+    * Relative parent: height and width -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="hero_intro">
+            <h2 class="intro_headline">
+                iPhone 14 and iPhone 14 Plus
+            </h2>
+            <p class="hero_intro--para">From $799 or $33.29/mo. for 24 mo. before trade‑in*</p>
+            <button class="btn btn_large">Buy</button>
+        </section>
+        <section class="features">
+            <div class="features_container">
+                <section class="iphone_sizes init_card">
+                </section>
+                <section class="iphone_battery init_card">
+                </section>
+                <section class="ceramic_shield init_card">
+                </section>
+                <section class="water_resistant init_card"></section>
+                <section class="action_mode init_card"></section>
+                <section class="bionic_chip init_card"></section>
+                <section class="pro_camera init_card"></section>
+                <section class="super_speed init_card"></section>
+                <section class="emergency_sos init_card"></section>
+                <section class="crash_detection init_card"></section>
+                <section class="personalization init_card"></section>
+                <section class="selfies init_card"></section>
+            </div>
+        </section>
+        <section class="ways_to_save">
+            <div class="ways_to_save--container">
+                <h2 class="ways_to_save--header">Ways to save on iPhone.</h2>
+            </div>
+
+            <div class="card_group">
+                <div class="card_child">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ea modi nemo
+                    nesciunt nostrum ex! Nisi, dolores expedita veritatis exercitationem ut at esse molestias, quod
+                    ipsam necessitatibus dignissimos illo molestiae!</div>
+                <div class="card_child">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt eligendi, quo
+                    sit quod neque unde ipsum assumenda aliquam sed necessitatibus fugiat commodi, tenetur corporis
+                    consequatur odit rerum veritatis eum recusandae.</div>
+                <div class="card_child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, fugit minima in
+                    deleniti suscipit, error obcaecati autem, iste praesentium sequi assumenda explicabo aut laborum
+                    facilis natus asperiores odit dolorum reprehenderit?</div>
             </div>
         </section>
     </main>
     <footer></footer>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
