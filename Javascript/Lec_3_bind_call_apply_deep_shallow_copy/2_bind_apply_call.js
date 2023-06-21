@@ -36,7 +36,6 @@ cap.petersTeam.call(ironMan);
  * ******/
 
 // const boundFn = cap.petersTeam.bind(ironMan);
-// boundFn(membersArray);
 // boundFn("cap", "war machine");
 
 
