@@ -121,7 +121,6 @@ let arr = [
         console.log(" I am a fn inside an array")
     }
 ]
-
 // console.log("arr", arr);
 // console.log(arr[5][2]);
 // console.log(arr[6]["name"]);
@@ -151,6 +150,9 @@ console.log("146", arr.length);
 // length -> lastnumericidx+1;
 
 /**length -> no Index out of bound error  -> introduces bugs*/
+
+
+
 
 
 
