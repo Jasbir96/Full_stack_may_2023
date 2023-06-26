@@ -214,13 +214,14 @@ let numArr = [1, 2, 3, 4, 5, 11,];
 // const sortedArr = numArr.sort();
 // console.log("sortedArr", sortedArr);
 
-function sortHelper(a, b) {
-    /**increasing order*/ 
-    return b-a;
+// function sortHelper(a, b) {
+//     /**increasing order*/ 
+//     return b-a;
 
-}
-let sortedArr = numArr.sort(sortHelper);
-console.log("sortedArr", sortedArr);
+// }
+// let sortedArr = numArr.sort(sortHelper);
+// console.log("sortedArr", sortedArr);
+
 
 
 
