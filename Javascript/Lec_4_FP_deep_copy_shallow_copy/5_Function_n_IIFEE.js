@@ -57,9 +57,7 @@ function smallerfn() {
 // fn({ name: "Jasbir" });
 // fn(smallerfn);
 
-
 /***HOF -> fn that accepts or returns a fn */
-
 function HOF(cb) {
     console.log("Inside HOF");
     cb();
