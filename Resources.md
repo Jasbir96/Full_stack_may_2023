@@ -1,7 +1,4 @@
 # Resources
-
-
-
 ## HTML
 ### CSS Layouts
 * https://cssgridgarden.com/
