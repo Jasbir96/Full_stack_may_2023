@@ -107,14 +107,14 @@ greeter();
 console.log("Task in between");
 console.log("Task in between");
 
-// let a=100;
+let a=100;
 
-// console.log("Before");
-// function cb() {
-//     console.log("I will explode",a);
-// }
-// setTimeout(cb, 2000);
-// console.log("After");
+console.log("Before");
+function cb() {
+    console.log("I will explode",a);
+}
+setTimeout(cb, 2000);
+console.log("After");
 
 /**GEC */
 /**should a exist -> no*/

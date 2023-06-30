@@ -88,7 +88,7 @@ function calc(n) {
 // console.timeEnd();
 // {5: sum of five, 10:sumof 10}
 function memoize(fn) {
-    let cache = {}
+    let cache = {};
     return function (n) {
         //  cache -> res -> present
         let istheInputPresent = cache[n]==undefined;
