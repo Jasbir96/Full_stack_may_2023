@@ -23,8 +23,8 @@
 // };
 // console.log("Object", obj);
 
-
 /**
+ * **************************Inbuilt object works ***************
  * 1. array -> Array(Object/class)
  * 2. function -> Function
  * 3. object -> Object 
@@ -41,6 +41,7 @@
  *      you are returned the answer. -> autoboxing
  *    
  * */
+
 /**** primitives */
 // let str = "hi i am str";
 // console.log(str);
@@ -72,6 +73,14 @@
 // console.log(obj2);
 
 
+
+
+/***
+ * Inheritance : 
+ *  1. unidirectional flow   of data 
+ *        a. if you don not have a prop/method -> prototype chain
+ *         b. if you have that -> you use your prop/method
+ * **/
 
 /********2. creating an object from another object*/
 let obj = {
@@ -116,15 +125,16 @@ for (let key in obj3) {
         console.log("Keys are ", key);
     }
 }
+
 //2.
 /**
  * object.keys -> normal loop
  * **/
-// let keys = Object.keys(obj3);
-// for (let i = 0; i < keys.length; i++) {
-//     console.log(i + " " + keys[i]);
-// }
-// console.log(keys);
+let keys = Object.keys(obj3);
+for (let i = 0; i < keys.length; i++) {
+    console.log(i + " " + keys[i]);
+}
+
 
 
 
