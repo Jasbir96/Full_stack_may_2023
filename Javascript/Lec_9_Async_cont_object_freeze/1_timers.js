@@ -19,16 +19,16 @@ console.log("Before");
 function cb() {
     console.log("Interval called ");
 }
-const timerId = setInterval(cb, 1000);
+const timerId = setInterval(cb, 2000);
 
 function cancelInterval() {
+    console.timeEnd();
     console.log("cancelling the interval timer");
     clearInterval(timerId);
 }
-setTimeout(cancelInterval, 3000);
+console.time();
+setTimeout(cancelInterval, 5000);
 console.log("after");
-
-
 
 
                                         // Web API                      console-> before 
