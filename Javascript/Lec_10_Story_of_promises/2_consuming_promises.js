@@ -8,9 +8,11 @@ const promise = fs.promises.readFile("./f1.txt");
 /**
  * then is  an event listener over promise  -> fn when promise is resolved (task is done)
  * **/
+
 promise
     .then(function (futureValue) {
-        console.log("Data inside the file is " + futureValue);
+        console.log("Data inside the file is "
+         + futureValue);
     })
 /***
  * catch -> is also an event listener on promises -> fn when promise is rejected(You get an erro)

@@ -42,6 +42,7 @@ function promReadFile(filePath) {
 /***consumption**/
 console.log("Before");
 const promise = promReadFile("./f1.txt");
+
 promise
     .then(function (futureValue) {
         console.log("Data inside the file is " + futureValue);

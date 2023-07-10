@@ -75,10 +75,9 @@ console.log("Before");
 //         })
 //     })
 // })
-
-
 /*******************chaining *********************/
 
+console.log("before");
 let promise = fs.promises.readFile("./f1.txt");
 promise
     .then(function (data) {
@@ -89,4 +88,7 @@ promise
         return fs.promises.readFile("./f3.txt");
     }).then(function (data) {
         console.log("content " + data);
+    }).catch(function (err) {
+        console.log("error " + err);
     })
+console.log("after");

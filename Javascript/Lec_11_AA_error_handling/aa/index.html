@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tasks, Microtasks, call Stack , UIRenders</h1>
+
+    <ol>
+        <!-- synchronous code  -->
+        <!-- always the highest prority -->
+        <!-- Asynchrounous code -->
+        <!-- 1. Tasks Queue: cb from any asynchronous callbacke based fn  and event listener -->
+        <!-- 2. UI render : requestAnimationframe-> help you to execute js just before rendering-->
+        <!--3. MicroTask queue : callbacks of promise are are enqued  -->
+    </ol>
+
+</body>
+<script>
+
+    console.log('A sync stack');
+    /********to executes a piece of code before redendering*****/
+    requestAnimationFrame(function () {
+        console.log('B request animation Frame');
+    });
+    /*****callback queue/ Task queue***/
+    setTimeout(() => {
+        console.log("C task queue")
+    }, 0);
+
+    /***fn will go into microtask queue*/
+    queueMicrotask(function () {
+        console.log('D microtask');
+    });
+        Promise.resolve().then(function () {
+            console.log("D microtask queue");
+        })
+            .then(function () {
+                console.log("E microtask queue");
+            })
+    console.log('F sync stack');
+
+
+//  synchronous code >   Microtask > callback / TaskQueue~= RequestanimationFrame
+</script>
+
+</html>

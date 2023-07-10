@@ -5,6 +5,7 @@ const fs = require("fs");
  * **/
 
 console.log("before");
+// task has started when fn is called 
 const promise = fs.promises.readFile("./f1.txt");
 /**
  * State of the promise-> pending
