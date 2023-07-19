@@ -25,8 +25,6 @@ let handler = {
 // console.log(proxy);
 
 
-
-//  IIFEE
 function fn(inpObj) {
     let handler = {
         get(target, prop) {
