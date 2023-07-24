@@ -379,7 +379,7 @@ The order in which functions are executed, that is. when they are popped out of 
 The callback function in the event queue has not yet started and is waiting for its time to be added to the stack when SetTimeOut() is called and the Web API waits. The function is loaded onto the stack when the function stack becomes empty, as seen below:
 ![event loop-1](./Pasted%20image%2020230724144849.png)
 
-### 15 Asynchronous JavaScript
+### 14 Asynchronous JavaScript
 
 A number of Web API features now use asynchronous code for running, especially those that access or fetch a resource from external devices, for instance, retrieving files from the network, accessing some database and returning data to it, accessing a video stream from a webcam, or broadcasting the display to a VR headset. There are the ways in which asynchronous coding can be done in JavaScript:
 
@@ -508,7 +508,7 @@ msg(); // Message: Hello World! <-- after 2 seconds
 msg1(); // Message: Hello World! <-- after 2 seconds
 ```
 
-### 14 JavaScript Error Handling
+### 15 JavaScript Error Handling
 
 Various types of errors occur when we are coding in JavaScript. There are a few options for dealing with them:
 
