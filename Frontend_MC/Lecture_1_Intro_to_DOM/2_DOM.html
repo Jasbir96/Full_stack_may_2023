@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+
+
+    <h1 class="hifine"> I am h1</h1>
+    <h1> I am another</h1>
+    <h2> I am h1</h2>
+    <h3> I am h1</h3>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci dignissimos
+        voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci dignissimos
+        voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci dignissimos voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+
+    <input type="text">
+    <input type="password" id="special">
+    <input type="text">
+    <button>click</button>
+
+
+    <script>
+
+        /****read**************************/
+        // returns first element ->using css selectors 
+        // const h1 = document.querySelector("h1");
+        // console.log(h1);
+        // let inputPass = document
+        //     .querySelector("input[type='password']")
+        //     console.log(inputPass);
+        // returns all the  element ->using css selectors 
+        const h1Arr = document.querySelectorAll("h1");
+        console.log(h1Arr);
+        // indexing
+        // console.log(h1Arr[0]);
+        // console.log(h1Arr[1]);
+        // // hof -> forEach
+        // h1Arr.forEach((elem) => {
+        //     console.log(elem.textContent);
+        // })
+        // Note : you get a nodeList from querySelectorAll 
+        // node list has few features similar to an array-> length, foreach
+        //  but it  is not an array
+
+        const allelems = document.getElementsByClassName("para");
+        // console.log(allelems);
+        // console.log(allelems[0]);
+        // console.log(allelems[1]);
+
+
+        /***
+         * 
+         * when you are dong a read operation for an elemnet -> nodelist , html collection 
+        and both are array like but not array
+         * */
+
+
+        //  convert nodelist/HTMLcollection Array
+
+        const newH1Arr = Array.from(h1Arr);
+        console.log(newH1Arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /****
+         * What is DOM ? -> it is an API that represents an HTML page  
+         *          DOM  -> 
+         *                  document       object              model ->  generic Tree 
+         
+         *                  file.html      element/tag        structure
+        */
+
+
+    </script>
+</body>
+
+</html>
