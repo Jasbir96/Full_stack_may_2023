@@ -32,6 +32,25 @@ Consider the following HTML structure: -->
         </div>
     </div>
     <script>
+        const parent = document.querySelector("#productList");
+        parent.addEventListener("click", addToCart);
+        function addToCart(e) {
+            // console.log(e.target)
+            let targetElem = e.target;
+            let targetClass = targetElem.getAttribute("class");
+            //    filter out stray events 
+            if (targetClass == "add-to-cart") {
+                // allow adding
+                // console.log(e.target)
+                let p = e.target.parentElement.children[1];
+                let price = p.innerText;
+                console.log(`You have added ${price} to your cart`)
+            } else {
+                // nothing
+            }
+        }
+
+
     </script>
 </body>
 

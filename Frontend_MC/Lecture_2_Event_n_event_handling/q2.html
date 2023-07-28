@@ -28,7 +28,18 @@ On clicking of the color name change the background color of the div.container t
         <div class="blue">blue</div>
         <div class="green">green</div>
     </div>
-    <script> 
+    <script>
+        // you use parent -> accept the events of children ->
+        //  event delegation
+        const parent = document.querySelector(".container");
+        parent.addEventListener("click", function (e) {
+            console.log("target", e.target)
+            // console.log("currentTarget", e.currentTarget)
+            const color = e.target.getAttribute("class");
+
+            e.currentTarget.style.backgroundColor=color
+        })
+
     </script>
 </body>
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[id] {
+
+            border: 1px solid red;
+        }
+
+        #outer_box {
+            height: 10rem;
+            width: 10rem;
+            background-color: lightblue;
+        }
+
+        #inner_box {
+            height: 50%;
+            width: 50%;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+
+        #button {
+            margin-top: 3px;
+            background-color: lightsalmon;
+            width: 50%;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Bubbling</h1>
+    <div id="outer_box">
+        <div id="inner_box">
+            <div id="button">Click Me </div>
+        </div>
+    </div>
+
+    <script>
+
+        /**
+         * Event bubbling : when an event happens on an element
+         * then that event travels up from itself to the document via 
+         * all the ancestor elements
+         * 
+         * e.target: the dom node on which event has occurred
+         * e.currentTarget: the dom node on which event listener 
+         * is attached and it catched the event
+         * 
+         *  Note: you should avoid the preventing bubbling 
+         *      1. event.stopPropogation
+         *      2. event.stopImmediatePropogation
+         * */
+        const outerBox = document.querySelector("#outer_box")
+        const innerBox = document.querySelector("#inner_box")
+        const button = document.querySelector("#button");
+
+        button.addEventListener("click", (e) => {
+            console.log("Button was clicked", e.target, "ctarget",
+                e.currentTarget
+            )
+        })
+
+        innerBox.addEventListener("click", (e) => {
+            console.log("innerBox was clicked", e.target, "ctarget",
+                e.currentTarget)
+            // e.stopPropagation();
+            // e.stopImmediatePropagation();
+        })
+        innerBox.addEventListener("click", (e) => {
+            console.log("innerBox was  next handler");
+        })
+        outerBox.addEventListener("click", (e) => {
+            console.log("outerBox was clicked", e.target, "ctarget",
+                e.currentTarget)
+        })
+        document.addEventListener("click", (e) => {
+            console.log("doc was clicked", e.target, "ctarget",
+                e.currentTarget)
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
