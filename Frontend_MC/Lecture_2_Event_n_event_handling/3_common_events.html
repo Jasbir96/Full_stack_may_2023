@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: lightcoral;
+            border: 1px solid green;
+            height: 10rem;
+            width: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <input type="text">
+    <!--
+        Different ways to interact with a web page 
+ Mouse : hover, click mousedown,mouseup, scroll, doubleclick,
+
+ Keyboard : keyup , keydown , keypress= keydown+keyup
+    -->
+
+    <script>
+        /****************************Mouse*********************************/
+        // const box = document.querySelector(".box");
+
+        // hover  -> mouseover
+        // box.addEventListener("mouseover", () => {
+        //     console.log("hover occurred");
+        // })
+        //   box.addEventListener("mouseleave", () => {
+        //         console.log("mouseleave occurred");
+        //     })
+
+        // click=mousedown+mouseup
+        // box.addEventListener("click", () => {
+        //     console.log("click occurred");
+        // })
+        // box.addEventListener("mousedown", () => {
+        //     console.log("mousedown occurred");
+        // })
+
+        // box.addEventListener("mouseup", () => {
+        //     console.log("mouseup occurred");
+        // })
+        // box.addEventListener("dblclick", () => {
+        //     console.log("dblclick occurred");
+        // })
+
+        /******************************/
+
+        let input = document.querySelector("input");
+        // input.addEventListener("keydown", function () {
+        //     console.log("Key down called");
+        // })
+        // input.addEventListener("keyup", function () {
+        //     console.log("keyup called");
+        // })
+        input.addEventListener("keypress", cb);
+    
+        function cb(eventObj) {
+            console.log("keypress called");
+            console.log("Key preseed is ",eventObj.key)
+        }
+
+    </script>
+
+</body>
+
+</html>

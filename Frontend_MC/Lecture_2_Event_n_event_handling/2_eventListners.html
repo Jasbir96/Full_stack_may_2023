@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: lightcoral;
+            border: 1px solid green;
+            height: 10rem;
+            width: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+
+    <script>
+        /**ways to add event Listener
+         *  1. inline events -> for a given event you can only use it once
+         *  2. addEventListeners -> have multiple cbs for a given event
+         * 
+         * 
+        */
+        // 
+        let box = document.querySelector(".box");
+        /*********************1. inline******************/
+        // box.onclick = function () {
+        //     alert("I was clicked");
+        // }
+        // box.onclick = function () {
+        //     alert("I am fake");
+        // }
+        /*******************2.eventListener****************************/
+        // box.addEventListener("click", () => {
+        //     console.log("I was clicked");
+        // })
+        //  box.addEventListener("click", () => {
+        //         console.log("I was fake");
+        //     })
+
+
+        box.addEventListener("click", cb,{once:true});
+        
+        
+        
+        
+        
+        
+        function cb() {
+                // append a h1 tag with Hi
+                let h1 = document.createElement("h1");
+                h1.textContent = "Hello";
+                document.body.appendChild(h1);
+
+            }
+
+       
+
+    </script>
+</body>
+
+</html>

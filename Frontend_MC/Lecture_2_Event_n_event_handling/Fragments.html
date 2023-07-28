@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Fragment is
+wrap up a collection of html tags -> a part of something
+    <React.Fragment></React.Fragment>
+    <>
+    -
+    -
+    -
+    </>
+    -->
+    <h1>List Item</h1>
+    <ul id="listContainer"></ul>
+    <script>
+        let ul = document.querySelector("#listContainer");
+
+        // // to add li items -> ul -> 10000
+        for (let i = 0; i < 10000; i++) {
+            let newLi = document.createElement("li");
+            newLi.textContent = `I am list item ${i + 1}`;
+        //    10k times -> html page
+            ul.appendChild(newLi);
+        }
+
+        // smarter way of doing it 
+        // a node creation
+        let fragment = document.createDocumentFragment();
+        for (let i = 0; i < 10000; i++) {
+            let newLi = document.createElement("li");
+            newLi.textContent = `I am list item ${i + 1}`;
+        //    appending my elements to that fragment
+            fragment.appendChild(newLi);
+        }
+        // fragment -> ul  -> once 
+        // ul.appendChild(fragment);
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    MC rounds : add sub-component : fragments
+ -->
