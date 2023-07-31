@@ -1,0 +1,58 @@
+<!-- 
+Interviewer: Problem statement : star component
+
+## Requirement
+Que What are the features that we want in that component:
+
+Must Have features
+*  rating from 1 to 5 
+* when click -> rating should appear
+* a hover effect should also be there
+
+Good to have features -> optimization , accessibility
+*  put emojis instead of numbers
+* slider based star rating
+
+
+## Approach 
+*   you have listen to three events 
+                click -> give the rating 
+                        update star upto that level 
+                        update Rating count 
+                mouseover -> we have change the stars upto that 
+                level to yellow
+ * edge cases
+                mouseleave ->  move it gray stars
+ -->
+
+
+<!-- 1. create DUMMY UI-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rating </title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Star Rating Component</h1>
+      
+        <div id="star_container" class="star_container">
+            <div class="star" idx="1">&#9733;</div>
+            <div class="star" idx="2">&#9733;</div>
+            <div class="star" idx="3">&#9733;</div>
+            <div class="star" idx="4">&#9733;</div>
+            <div class="star" idx="5">&#9733;</div>
+        </div>
+        <h2>Rating Count : <span id="count">0</span></h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
