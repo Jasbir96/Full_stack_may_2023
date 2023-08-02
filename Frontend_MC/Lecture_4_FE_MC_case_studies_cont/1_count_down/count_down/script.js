@@ -29,7 +29,10 @@ const minInput = document.getElementById("min");
 const hrsInput = document.getElementById("hr");
 const secInput = document.getElementById("sec");
 let counterID;
+let saveTimeLeft;
 
+// 1. click -> start ->
+//     pause -> display : block, start : hide
 startBtn.addEventListener("click", function () {
     // 3 things -> 
     // 1. taking the input
@@ -52,17 +55,48 @@ startBtn.addEventListener("click", function () {
         transformedMins,
         transformedHrs
     } = tranformInputs(secs, mins, hrs);
-    // initially set UI
+    
+    minInput.value = transformedMins;
+    hrsInput.value = transformedHrs;
+    secInput.value = transformedSecs;
     let countDownTime = transformedHrs * 3600 + transformedMins * 60 + transformedSecs;
     timer(countDownTime);
+    startBtn.style.display = "none";
+    pauseBtn.style.display="block";
+
+})
+pauseBtn.addEventListener("click", function () {
+    // pause the processing 
+    clearInterval(counterID);
+    // no changes on the  UI
+    // 2. click -> pause -> 
+    //     continue -> block, pause -> hide
+    pauseBtn.style.display = "none";
+    continueBtn.style.display = "block";
+})
+continueBtn.addEventListener("click", function () {
+    // continue the timer
+    timer(saveTimeLeft);
+})
+resetBtn.addEventListener("click", function () {
+    //    reset UI 
+    minInput.value = "00";
+    secInput.value = "00";
+    hrsInput.value = "00";
+    // reste process
+    saveTimeLeft = 0;
+    clearInterval(counterID);
 })
 
 
+
+/***********************helper functions**************************/
 function timer(countDownTime) {
     counterID = setInterval(() => {
         // a. process transformed  input -> every one second 
         countDownTime--;
-        console.log(countDownTime);
+        saveTimeLeft = countDownTime;
+        // console.log(countDownTime);
         // b. change the UI
         updateUIEverySec(countDownTime);
     }, 1000);
@@ -70,14 +104,15 @@ function timer(countDownTime) {
 
 }
 
+
 function updateUIEverySec(countDownTime) {
     // 1. countDOWNTIME-> hrs:mins:secs-> put it to the UI
     let hrs = Math.floor(countDownTime / 3600);
     let mins = Math.floor((countDownTime % 3600) / 60);
     let secs = countDownTime % 60;
-    // console.log(mins,secs,hrs)
+    console.log(mins, secs, hrs)
     if (mins == 0 && secs == 0 && hrs == 0) {
-        console.log("Timer Finished");
+        // console.log("Timer Finished");
         // stop the timer
         clearInterval(counterID);
         return;
@@ -85,6 +120,7 @@ function updateUIEverySec(countDownTime) {
 
     if (secs > 0) {
         secs--;
+        // 10 -> 9
         secInput.value = secs < 10 ? `0${secs}` : `${secs}`;
         return;
     }
@@ -94,10 +130,11 @@ function updateUIEverySec(countDownTime) {
         secInput.value = 59;
         return;
     }
+
     if (hrs > 0) {
         hrs--;
-        minInput.value = 59
-        secInput.value = 59
+        minInput.value = 59;
+        secInput.value = 59;
         hrsInput.value = hrs < 10 ? `0${hrs}` : `${hrs}`
     }
 
@@ -135,6 +172,19 @@ function tranformInputs(secs, mins, hrs) {
         mins = mins - 60;
         hrs++;
     }
+
+
+    if (secs == 0 && mins > 0) {
+        mins--;
+        secs = 59
+    } else if (mins == 0 && hrs > 1) {
+        hrs--;
+        mins = 59;
+        secs = 59;
+
+    }
+
+
     return {
         transformedSecs: secs,
         transformedMins: mins,
@@ -145,34 +195,13 @@ function tranformInputs(secs, mins, hrs) {
 
 
 
-
-
 /***
  * DRY -> do not repeat yourself
- * Single responsibility principles 
+ * Single responsibility principles
  * */
-
-
-
 
 // 20hrs 10min 20 sec -> 20 * 3600,
 
-
-
-
-pauseBtn.addEventListener("click", function () {
-
-})
-
-continueBtn.addEventListener("click", function () {
-
-
-})
-
-
-resetBtn.addEventListener("click", function () {
-
-})
 
 
 

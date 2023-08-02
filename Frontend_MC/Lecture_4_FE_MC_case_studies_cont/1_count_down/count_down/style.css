@@ -2,3 +2,9 @@
     display: flex;
     ;
 }
+.pause{
+    display: none;
+}
+.continue{
+    display: none;
+}
