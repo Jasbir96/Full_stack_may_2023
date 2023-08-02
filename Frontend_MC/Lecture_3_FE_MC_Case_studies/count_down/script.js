@@ -52,7 +52,6 @@ startBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
     // timerObject.timeLeft = 0;
     prevInsecs=0;
-
     clearTimeout(timerId);
     // clear the text 
 })
