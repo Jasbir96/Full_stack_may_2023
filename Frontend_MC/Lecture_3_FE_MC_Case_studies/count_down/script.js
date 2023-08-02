@@ -70,7 +70,7 @@ function timer(timeInSeconds) {
 }
 
 
-// singleton -> export it as component
+// export it as component
 
 
 
