@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Closure example</h1>
+    <script>
+
+        let theThing = null;
+        let replaceThing = function () {
+            console.log("something");
+            let originalThing = theThing;
+            let unused = function () {
+                if (originalThing) {
+                    console.log("hi");
+                };
+            }
+            thething = {
+                longStr: new Array(10000000),
+                someMethod: function () {
+                    console.log("Bi");
+                }
+
+            }
+
+        }
+
+
+
+
+    
+        setInterval(() => {
+            replaceThing()
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
