@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+## usecases 
+* Nested comment Box:  
+        fb chat 
+        reddit threads
+* Flavour
+        Nested comment Box
+        JSON data -> file system 
+* Extended Problem statement : Input box 
+                    produces a comment and that comment can have replies 
+* Problem statement:  
+        * comment : you can have multiple replies 
+        *  reply
+                    * every  reply can have multiple replies 
+                    * those sub replies can have there own replies 
+      -->
+
+    <!-- all the commments and there replies  -->
+    <div class="container">
+        <div class="comment-container">
+            <div class="comment-card">
+                <h3 class="comment_text">Good Morning Everyone, How are you ? </h3>
+                <div class="reply">Reply</div>
+                <!-- <div class="comment-reply-container">
+                        <input type="text" placeholder="write your comment">
+                        <button class="btn-submit">submit</button>
+                    </div> -->
+                <div class="comment-container">
+                    <div class="comment-card">
+                        <h3 class="comment_text">I am Good ? </h3>
+                        <div class="reply">Reply</div>
+                    </div>
+                  
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="comment-reply-container">
+        <input type="text" placeholder="write your comment">
+        <button class="btn-submit">submit</button>
+    </div> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<!-- every comments -> reply is it's children
+        every replies -> sub-reply is also it's children 
+            everyone has the same structure 
+        
+-->
