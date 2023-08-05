@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+/* chessboard */
+.heading {
+    text-align: center;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+.box {
+    /* background-color: lightblue; */
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.yellow {
+    background-color: yellow;
+}
