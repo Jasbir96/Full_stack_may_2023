@@ -1,0 +1,53 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/*  */
+.autocomplete {
+    border:2px solid gray;
+    
+    width:30rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search_input {
+    width:90%;
+    height:3rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.suggestion_box {
+    margin: 2rem auto;
+    width:80%;
+    max-height:15rem;
+    overflow-y: scroll;
+    border:2px solid black;
+    display: none;
+}
+/* i want to show suggestion when there is some text  */
+.visible{
+    display: block;
+}
