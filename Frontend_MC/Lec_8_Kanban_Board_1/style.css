@@ -1,0 +1,190 @@
+/* create css variables  */
+:root {
+    --pink: lightpink;
+    --blue: lightblue;
+    --green: lightgreen;
+    --purple: #8e44ad;
+    ;
+    --light: white;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* styling starts from here */
+
+
+/* ************toolbox_cont **********/
+.toolbox_cont {
+    height: 5rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+
+.toolbox-priority-cont {
+    height: 60%;
+    background-color: #393c3f;
+    width: 18rem;
+    margin-left: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.color {
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.pink {
+    background-color: var(--pink);
+}
+
+.blue {
+    background-color: var(--blue);
+
+}
+
+.purple {
+    background-color: var(--purple);
+
+}
+
+.green {
+    background-color: var(--green);
+}
+
+
+.action-btn-cont {
+    height: 60%;
+    background-color: var(--light);
+    width: 10rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.add-btn,
+.remove-btn {
+    font-size: 1.75rem;
+
+}
+
+/* css for main container */
+
+
+
+.main_cont {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    /* if the horizontal space is not 
+    enough  move the further items to the
+     next row*/
+    flex-wrap: wrap;
+    /* creates a gap between every elem
+    row& column wise 2rem;
+    */
+    gap:2rem;
+}
+.ticket-cont {
+    height: 10rem;
+    width: 15rem;
+    background-color: #ecf0f1;
+    position: relative;
+}
+
+.ticket-color {
+    height: 10%;
+}
+
+.ticket-id {
+    height: 0.75rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding-left: 10px;
+}
+
+.ticket-area {
+    height: 7.5rem;
+    padding: 5px;
+    font-size: 1.25rem;
+}
+
+.lock-unlock {
+    font-size: 1.25rem;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+
+/* modal css */
+.modal-cont {
+    /* we want it fixed to viewport */
+    position: fixed;
+    height: 50vh;
+    width: 50vw;
+    left: 25vw;
+    top: 25vh;
+    display: none;
+    /* display: flex; */
+    /* border: 2px solid grey; */
+
+    -webkit-box-shadow: 10px 10px 40px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 40px -4px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 40px -4px rgba(0, 0, 0, 0.75);
+   
+}
+.textarea-cont {
+    height: 100%;
+    width: 75%;
+    font-size: 2rem;
+    padding: 2rem;
+    border: none;
+    outline: none;
+
+    resize: none;
+}
+.priority-color-cont {
+    background-color: black;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* border-left: 2px solid grey; */
+}
+.priority-color {
+    height: 3rem;
+    width: 5rem;
+}
+
+.active {
+    border: 5px solid white;
+}
