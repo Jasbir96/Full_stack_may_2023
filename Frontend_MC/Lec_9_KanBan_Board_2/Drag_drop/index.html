@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Example</title>
+    <style>
+.container {
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.box  {
+    height:30px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    cursor: grab;
+    
+}
+#container1>.box{
+    background-color: lightcoral;
+}
+#container2>.box{
+    background-color: lightgreen;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Drag and Drop Example</h1>
+
+    <div class="container" id="container1">
+        <!-- 1st -> add an attribute draggable=true -->
+        <div class="box" draggable="true">Box 1</div>
+        <div class="box" draggable="true">Box 2</div>
+        <div class="box" draggable="true">Box 3</div>
+    </div>
+
+    <div class="container" id="container2">
+        <div class="box" draggable="true">Box A</div>
+        <div class="box" draggable="true">Box B</div>
+    </div>
+
+    <script src="drag_drop.js"></script>
+</body>
+
+</html>

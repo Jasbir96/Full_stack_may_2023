@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="toolbox_cont">
+        <div class="toolbox-priority-cont">
+            <div class="color pink"></div>
+            <div class="color blue"></div>
+            <div class="color purple"></div>
+            <div class="color green"></div>
+        </div>
+        <div class="action-btn-cont">
+            <div class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="remove-btn">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="main_cont">
+        <div class="heading_cont">
+            <h2 class="task_heading--pending">Pending</h2>
+            <h2 class="task_heading--finished">Finished</h2>
+        </div>
+
+
+        <div class="container_wrapper">
+            <div class="pending-cont container" aria-label="pending Tasks" aria-live="assertive">
+
+            </div>
+            <div class="finished-cont container" aria-label="finished tasks" aria-live="polite">
+
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <div class="modal-cont">
+        <textarea class="textarea-cont" placeholder="Enter Your Task"></textarea>
+        <div class="priority-color-cont">
+            <div class="priority-color pink"></div>
+            <div class="priority-color blue"></div>
+            <div class="priority-color green active"></div>
+            <div class="priority-color purple "></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/short-unique-id@4.4.4/dist/short-unique-id.min.js"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="drag_drop.js"></script>
+
+    <footer>
+        <ul role="sitemap">
+            <li>
+                <a href="msbdsjh" role="home-page">HOME</a>
+            </li>
+            <li>About</li>
+            <li>Contact US</li>
+        </ul>
+
+    </footer>
+</body>
+
+</html>
