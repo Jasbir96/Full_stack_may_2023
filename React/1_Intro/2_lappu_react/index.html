@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/reactDOM.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+
+        function HELLO() {
+            let name="React";
+            let age=30
+            return `<h1>Hello  ${name} Thanks Babel and you are ${age<18 ?"underage":"eligble"}</h1>`;
+        }
+
+ReactDOM.render(HELLO, document.getElementById("root"));
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- algorithm to efficiently change your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <!-- single Page applcation : JS -->
+    <script type="text/babel">
+        let statinoary = ["Pen", "Pencil", "Eraser", "Ruler"];
+        let liItemsArr = [];
+        for (let i = 0; i < statinoary.length; i++) {
+            let item = statinoary[i];
+            const liItem = <li>{item}</li>;
+            liItemsArr.push(liItem);
+        }
+        // console.log(liIte    msArr)
+        function List() {
+            return<div>
+                <h2>List Items
+                </h2>
+                {/** react spread the arrray -> li nodes 
+                */}
+                <ul>{statinoary.map((item)=>{
+                    return <li>{item}</li>
+                })}</ul>
+            </div>
+        }
+
+        ReactDOM.render(<List></List>, document.getElementById("root"));
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- algorithm to efficiently change your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- the whole application lives inside-->
+    <div id="root"></div>
+
+    <!-- single Page applcation : JS -->
+    <script type="text/babel">
+        // -> component : a function that returns HTML
+        function HELLO(prop) {
+            let {name,age}=prop
+            return <h1>Hello {name} Thanks Babel is {age} old </h1>;
+        }
+        function BYE(){
+            return <p>BYE Component</p>
+        }
+// create -> parent component from children component -> 
+// significance -> you can break a problem into multiple smaller parts  
+        function HELLOPARENT() {
+            return <div>
+                <HELLO name={"Rohan"} age={10}></HELLO>
+                <HELLO name={"Rajneesh"} age={30}></HELLO>
+                <HELLO name="Krishna" age={40}></HELLO>
+                <HELLO ></HELLO>
+                <BYE></BYE>
+                </div>
+
+        }
+
+    //    code execution 
+        // a method in REACTDOM -> puts the retruned HTML from componente in root element
+        ReactDOM.render(<HELLOPARENT></HELLOPARENT>, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
