@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Counter() {
+            // -> useState (0)-> 0 is the inital  value
+            // arr[0]-> state var
+            // arr1-> function to update state var
+            const [count, setCount] = React.useState(0);
+            // const count = arr[0];
+            // call this fn given by useState -> 
+            // const updateCount= arr[1];
+            // const count=10;
+            console.log("1");
+            const increment = () => {
+                // tell react -> update count by 1
+                console.log("Incremented");
+                // setCount(1000);
+                setCount(count + 1);
+            }
+            console.log("2");
+            const decrement = () => {
+                // tell react -> update count by -1
+                console.log("decremented");
+                setCount(count - 1);
+            }
+            console.log("rendered");
+            return <div>
+                <button onClick={increment}>+</button>
+                <p>{count}</p>
+                <button onClick={decrement}>-</button>
+            </div>
+        }
+        ReactDOM.render(<Counter></Counter>, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
+
+<!--
+   1. REact.useState(0) -> takes inital value for state vara;
+   2. It returns an array of statevar and a setterfn  
+   3 when you setterFN is called 
+        a. it updates your  state variable 
+        b. calls the component again -> re-render
+-->

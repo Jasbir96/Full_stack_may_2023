@@ -1,0 +1,73 @@
+<!-- 
+
+    I want to create 5 counters -> I want to pass number
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- this libraray actually changes UI -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+        .counter {
+            margin-top: 2rem;
+            border-bottom: 2px solid gray;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Counter(props) {
+            const { index, value } = props;
+            const [count, setCount] = React.useState(value);
+            const increment = () => {
+                console.log("Incremented");
+                setCount(count + 1);
+            }
+            console.log("2");
+            const decrement = () => {
+
+                console.log("decremented");
+                setCount(count - 1);
+            }
+            console.log("rendered");
+            return <div class="counter">
+                <h2> Counter Number :{index}</h2>
+                <button onClick={increment}>+</button>
+                <p>{count}</p>
+                <button onClick={decrement}>-</button>
+            </div>
+        }
+        function CounterParent() {
+            return <div>
+                <Counter index={1} value={2} />
+                <Counter index={2} value={3} />
+                <Counter index={3} value={4} />
+            </div>
+        }
+        ReactDOM.render(<CounterParent></CounterParent>, document.getElementById("root"));
+    </script>
+</body>
+</html>
+<!-- 
+    1. usecase of state wrt to a component :to make it dynamic 
+    2. you can create complex component by using multiple 
+    independent  component.
+    3. Props:  to pass data to a children component .Majorly
+    the data specific to that component
+ -->
