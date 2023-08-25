@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react'
 
 function GetData() {
-
     const [data, setData] = useState(null);
-
-    // hook -> given react 
-    useEffect(
-        function fn() {
-            async function fetchData() {
-                console.log("useEffect ran ");
-                const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-                const user = await response.json();
-                console.log(data);
-                setData(user);
-            }
-            fetchData();
+//    http -> call -> update the state -> rerender 
+    function fn() {
+        async function fetchData() {
+            console.log("useEffect ran ");
+            const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+            const user = await response.json();
+            console.log(data);
+            setData(user);
         }
-        , [])
+        fetchData();
+    }
+    // hook -> given react 
+    useEffect(fn, []);
     console.log("Render");
 
     return (
