@@ -3,7 +3,7 @@
  *      a. throw new Error, 
  *      b. Promise.reject, 
  *      c. promise that is going to be rejected in the future. -> catch
- *  3 ways in which you can get a reolved promise
+ *  3 ways in which you can get a resolved promise
  *      a. value
  *      b. Promise.resolve, 
  *      c. promise that is going to be resolved in the future. -> then

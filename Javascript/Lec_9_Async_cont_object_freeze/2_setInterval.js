@@ -36,10 +36,7 @@ function clearCb() {
 let obj = mysetInterval(cb, 1000);
 setTimeout(clearCb, 3000);
 
-// t -> 0 SetINterval   setTimout -> 3sec(Webapi)
-// t -> 1 myfn          setTimout -> 3sec(Webapi)
-// t -> 2 myfn setTimeout setTimeout
-// t-> 3 myfn
+
 
 
 
