@@ -36,9 +36,10 @@ export default function basicOps(products, searchTerm, sortDir, currCategory, pa
     /************************Pagination *********************/
     let sidx = (pageNum - 1) * pageSize;
     let eidx = sidx + pageSize;
-    console.log(filteredSortedArr)
     filteredSortedgroupByArr = 
     filteredSortedgroupByArr.slice(sidx, eidx);
+    console.log(filteredSortedArr)
+
     return filteredSortedgroupByArr;
 }
 
