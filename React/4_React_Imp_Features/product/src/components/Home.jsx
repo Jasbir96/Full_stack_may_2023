@@ -6,6 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ProductList from './ProductList';
 import Categories from './Categories';
 import basicOps from './utility/basicOps';
+import { usePaginationContext } from './contexts/PaginationContext';
 
 function Home() {
     // preserver -> pagination
@@ -21,8 +22,9 @@ function Home() {
     /**************************** currcategory : category group you result **********************************/
     const [currCategory, setCurrCategory] = useState("All categories");
     // page num and page size
-    const [pageSize, setPageSize] = useState(4);
-    const [pageNum, setPageNum] = useState(1);
+    const { pageSize, pageNum,
+        setPageNum,
+        setPageSize } = usePaginationContext();
     /****************get all the products*********************/
     useEffect(() => {
         (async function () {
@@ -52,22 +54,25 @@ function Home() {
                         className='search_input'
                         type="text"
                         value={searchTerm}
-                        onChange={(e) => { setSearchTerm(e.target.value)
-                        setPageNum(1);
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value)
+                            setPageNum(1);
                         }} />
                     <div className="icons_container">
                         <ArrowCircleUpIcon
                             style={{ color: "white" }}
                             fontSize="large"
-                            onClick={() => { setsortDir(1) 
-                            setPageNum(1)
+                            onClick={() => {
+                                setsortDir(1)
+                                setPageNum(1)
                             }}
                         ></ArrowCircleUpIcon>
                         <ArrowCircleDownIcon
                             fontSize="large"
                             style={{ color: "white" }}
-                            onClick={() => { setsortDir(-1)
-                            setPageNum(1)
+                            onClick={() => {
+                                setsortDir(-1)
+                                setPageNum(1)
                             }}
                         ></ArrowCircleDownIcon>
                     </div>
@@ -76,7 +81,7 @@ function Home() {
                 <div className="categories_wrapper">
                     <Categories categories={categories}
                         setCurrCategory={setCurrCategory}
-                        setPageNum={setPageNum}
+                        
                     ></Categories>
                 </div>
 
@@ -125,4 +130,20 @@ function Home() {
 
 export default Home;
 
+
+/***
+ * 1. Steps/ 
+ *  - INtial Data 
+ *  a. Searching
+ *  b. Sorting
+ *  c. Categorization
+ *  d. Pagination
+ *  e. Render the Results
+ * 
+ * 2. Data 
+ *      1. Products
+ *      2. Categories
+ * 
+ * 
+ * **/
 

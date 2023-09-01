@@ -11,10 +11,10 @@ ReactDOM.createRoot(
   .render(
 
     <BrowserRouter>
-      {/* <App /> */}
+      <App />
       {/* <Routing></Routing> */}
       {/* <Context></Context> */}
-      <ThemeManger></ThemeManger>
+      {/* <ThemeManger></ThemeManger> */}
     </BrowserRouter>
     ,
   )

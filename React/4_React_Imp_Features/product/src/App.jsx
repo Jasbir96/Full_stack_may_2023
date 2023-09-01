@@ -8,10 +8,11 @@ import PageNotFound from './components/PageNotFound'
 import Home from './components/Home';
 import ProductDetails from './components/ProductDetails';
 import Cart from "./components/Cart";
-import User from './components/User'
+import User from './components/User';
+import PaginationProvider from './components/contexts/PaginationContext'
 function App() {
   return (
-    <>
+    <PaginationProvider>
       <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home></Home>}> </Route>
@@ -21,7 +22,7 @@ function App() {
         <Route path="/home" element={<Navigate to="/"></Navigate>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}> </Route>
       </Routes>
-    </>
+    </PaginationProvider>
 
   )
 }

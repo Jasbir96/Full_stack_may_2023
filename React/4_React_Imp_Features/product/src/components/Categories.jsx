@@ -1,9 +1,10 @@
 import React from 'react'
+import { usePaginationContext } from './contexts/PaginationContext'
 
 function Categories(props) {
-    const { categories, setCurrCategory, setPageNum
-
+    const { categories, setCurrCategory
     } = props
+    const { setPageNum } = usePaginationContext();
     return (
         <>
             <button className="category_option"
