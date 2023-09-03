@@ -62,20 +62,20 @@ const fs = require("fs");
 // //         console.log("data" + data);
 // //     }
 // // }
-// function ownPromisify(fn) {
-//     return function (...args) {
-//         return new Promise(function (resolve, reject) {
-//             // passing my own cb  -> first will be an error / other params
-//             fn(...args, function (err, res) {
-//                 if (err) {
-//                     resolve(err);
-//                 } else {
-//                     reject(res);
-//                 }
-//             })
-//         })
-//     }
-// }
+function ownPromisify(fn) {
+    return function (...args) {
+        return new Promise(function (resolve, reject) {
+            // passing my own cb  -> first will be an error / other params
+            fn(...args, function (err, res) {
+                if (err) {
+                    resolve(err);
+                } else {
+                    reject(res);
+                }
+            })
+        })
+    }
+}
 
 
 
@@ -84,8 +84,8 @@ const fs = require("fs");
 // promisifedVersion(1000, 2000, 3000)
 // .then(cb)
 
-// const promisefiedFS = ownPromisify(fs.readFile);
-// promisefiedFS("f1.txt").then(console.log).catch(console.log)
+const promisefiedFS = ownPromisify(fs.readFile);
+promisefiedFS("f1.txt").then(console.log).catch(console.log)
 
 // //  1. cb way of using my fn 
 // function cb(sum) {
@@ -104,8 +104,8 @@ const fs = require("fs");
 // obj.HOF(1000,2000,3000, cb);
 
 
-const promisefiedObjectMethod = ownPromisify(obj.HOF);
-promisefiedObjectMethod(1000, 2000, 3000).then(cb);
+// const promisefiedObjectMethod = ownPromisify(obj.HOF);
+// promisefiedObjectMethod(1000, 2000, 3000).then(cb);
 
 
 
