@@ -4,10 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 //1
 const TodoSlice = createSlice({
     name: "toolbox",
+    // intinal state value
     initialState: {
         value: "",
         todoList: []
     },
+    // functions to update your state 
     reducers: {
         setValue: (state, descObj) => {
             console.log("I am set value",

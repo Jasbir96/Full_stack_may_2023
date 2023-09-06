@@ -7,19 +7,16 @@ function TodoRedux() {
         return store.todoState;
     })
     const dispatch = useDispatch();
-
+// Bussiness logic
     const handleChange = (e) => {
         const updatedVal = e.target.value;
         dispatch(actions.setValue(updatedVal));
     }
 
-
     const handleAddTask = () => {
         dispatch(actions.addtask(value));
     }
-
-
-
+// UI
     return (
         <>
             <h2>Todo</h2>

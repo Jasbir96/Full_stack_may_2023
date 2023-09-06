@@ -4,12 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import User from './components/normalComponents/User.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    {/* 3 */}
+ 
+   
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
+ ,
 )
