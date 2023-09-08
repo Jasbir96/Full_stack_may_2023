@@ -85,9 +85,34 @@ body {
   padding: 0.5rem;
   font-size: 1.2rem;
 }
-.navbar{
+
+.navbar {
   display: flex;
-    height: 3rem;
-    justify-content: space-evenly;
-    align-items: center;
+  height: 3rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cart_container {
+  position: relative;
+}
+
+.cart_quantity {
+  position: absolute;
+  bottom: 0px;
+  right: -10px;
+  color: #3395b3;
+  font-size: 0.9rem;
+}
+
+
+.add_to_cart_container {
+  display: flex;
+  justify-content: center;
+}
+
+.cart_product_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

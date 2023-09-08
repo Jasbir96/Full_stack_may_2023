@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePaginationContext } from './contexts/PaginationContext'
+import { usePaginationContext } from '../contexts/PaginationContext'
 
 function Categories(props) {
     const { categories, setCurrCategory
