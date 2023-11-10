@@ -49,7 +49,6 @@ app.use(function (req, res, next) {
     } else {
         next();
     }
-
 })
 /******************create user ***************/
 app.post("/api/user", function (req, res) {
