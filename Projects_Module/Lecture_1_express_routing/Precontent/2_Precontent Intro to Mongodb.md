@@ -1,6 +1,6 @@
 
 ## Req-Res cycle of a simple request  
-![[Pasted image 20231120184257.png]]
+<img src="./two.png">
 Usually when a user visits a website ->to get some data. It makes the http request by clicking on a button or by doing some other action . A request will be send to a backend server and then the server will search the content related to the request and return the resp.
 
 **Problem** :  In a production level server there is a lot of data that is stored for example Amazon has 2 million plus products and store data and all the assets in the same server is not possible . 
@@ -9,9 +9,7 @@ Usually when a user visits a website ->to get some data. It makes the http reque
 * Now to further scale them we can have a different server just for the DBMS.
 so in today's lecture we will  see how to perform these two steps 
 #### Now for starters our setup will look like this 
-![[Pasted image 20231120190010.png]] 
-
-
+<img src="./one.png">
 
 ## Important Terms
 * Connection : We usually need to form a connection from server to DB before we can do anything . 
