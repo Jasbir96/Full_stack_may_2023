@@ -87,8 +87,6 @@ app.get("/api/user/:userId", function (req, res) {
 
 })
 
-
-
 function getUserByid(id) {
     const user = userDataStore.find((user) => {
         return user.id == id;
@@ -108,10 +106,8 @@ app.use(function cb(req, res) {
         message: " route not found"
     })
 })
-
 const port = process.env.PORT || 3000;
 // server -> run on a port 
 app.listen(port, function () {
     console.log(" server is listening to port 3000");
 })
-
