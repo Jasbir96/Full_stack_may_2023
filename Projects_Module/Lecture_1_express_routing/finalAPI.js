@@ -8,26 +8,6 @@ const app = express();
 // reading the content
 const strContent = fs.readFileSync("./dev-data.json", "utf-8");
 const userDataStore = JSON.parse(strContent);
-
-app.get("/api/user", function (req, res) {
-    try {
-        console.log("I am inside  get method");
-
-        if (userDataStore.length == 0) {
-            throw new Error("No users are present")
-        }
-        res.status(200).json({
-            status: "success",
-            message: userDataStore
-        })
-    } catch (err) {
-        res.status(404).json({
-            status: "failure",
-            message: err.message
-        })
-    }
-
-})
 // you need to express.json
 app.use(express.json());
 // add a middlewarep
@@ -50,8 +30,35 @@ app.use(function (req, res, next) {
         next();
     }
 })
-/******************create user ***************/
-app.post("/api/user", function (req, res) {
+
+
+/***********routes**************/
+app.get("/api/user", getAllUserHandler);
+app.post("/api/user", createuserHandler);
+app.get("/api/user/:userId", getUserById);
+
+/******************handler functions ***************/
+
+function getAllUserHandler(req, res) {
+    try {
+        console.log("I am inside  get method");
+
+        if (userDataStore.length == 0) {
+            throw new Error("No users are present")
+        }
+        res.status(200).json({
+            status: "success",
+            message: userDataStore
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: "failure",
+            message: err.message
+        })
+    }
+
+}
+function createuserHandler(req, res) {
     const id = short.generate();
     const userDetails = req.body;
     userDetails.id = id;
@@ -59,13 +66,12 @@ app.post("/api/user", function (req, res) {
     // adding user to the file 
     const struserStore = JSON.stringify(userDataStore);
     fs.writeFileSync("./dev-data.json", struserStore);
-
     res.status(200).json({
         status: "successfull",
         message: `update the user with ${id}`
     })
-})
-app.get("/api/user/:userId", function (req, res) {
+}
+function getUserById(req, res) {
     try {
         const userId = req.params.userId;
         const userDetails = getUserByid(userId);
@@ -83,20 +89,10 @@ app.get("/api/user/:userId", function (req, res) {
             message: err.message
         })
     }
-
-
-})
-
-function getUserByid(id) {
-    const user = userDataStore.find((user) => {
-        return user.id == id;
-    })
-    if (user == undefined) {
-        return "no user found";
-    } else {
-        return user;
-    }
 }
+
+
+
 // 404 route not found
 app.use(function cb(req, res) {
     // console.log("");

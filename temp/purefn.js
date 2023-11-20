@@ -22,3 +22,5 @@ fn(5, 2);
 fn(5, 2);
 fn(5, 2);
 fn(5, 2);
+const fs=require("fs");
+fs.existsSync()
