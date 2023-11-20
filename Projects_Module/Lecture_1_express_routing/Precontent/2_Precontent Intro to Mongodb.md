@@ -28,5 +28,6 @@ There are certain things like
 * DB password ,username 
 * PORT Number
 * API keys
-that are used to run your server and should always be kept private. To achieve the privacy they are added to **env file** and that file is kept hidden so that others can't access it . 
+
+That are used to run your server and should always be kept private. To achieve the privacy they are added to **env file** and that file is kept hidden so that others can't access it . 
 In today's class we will look into it how to achieve this
