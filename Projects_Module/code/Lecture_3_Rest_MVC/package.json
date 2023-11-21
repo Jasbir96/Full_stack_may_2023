@@ -5,8 +5,8 @@
   "main": "finalAPI.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon finalAPI.js",
-    "start": "node finalAPI.js"
+    "dev": "nodemon api.js",
+    "start": "node api.js"
   },
   "keywords": [],
   "author": "",
