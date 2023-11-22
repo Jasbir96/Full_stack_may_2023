@@ -24,6 +24,15 @@ app.use(express.json());
 app.use("/api/user", UserRouter);
 app.use("/api/product", ProductRouter);
 
+// app.get("/search", function (req, res) {
+//     console.log(req.query);
+//     res.status(200).json({
+//         message:req.query,
+//         status:"success"
+//     })
+
+// })
+
 /******************handler functions ***************/
 // 404 route not found
 app.use(function cb(req, res) {
