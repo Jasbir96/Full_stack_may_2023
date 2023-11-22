@@ -102,7 +102,7 @@ const newProductSchemaRules = {
 const productSchema = new mongoose.Schema(newProductSchemaRules);
 
 
-let validCategories = ['Electronics', "Audio", 'Clothing', 'Accessories'];
+let validCategories = ['Electronics', "Audio", 'Clothing', 'Accessories',"Shoes"];
 
 productSchema.pre("save", function (next) {
     const product = this;
