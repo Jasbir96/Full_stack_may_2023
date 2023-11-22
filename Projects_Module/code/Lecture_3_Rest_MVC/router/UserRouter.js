@@ -1,6 +1,7 @@
 const express = require("express");
 const UserRouter = express.Router();
 const { getAllUserHandler, createuserHandler, getUserById, deleteUserById } = require("../controller/UserController")
+const {checkInput}=require("../controller/middleWares")
 /***********routes**************/
 /**********users*****/
 UserRouter.get("/", getAllUserHandler);

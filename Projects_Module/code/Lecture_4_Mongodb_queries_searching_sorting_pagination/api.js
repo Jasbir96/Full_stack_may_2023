@@ -18,6 +18,7 @@ mongoose.connect(dbURL)
 // with this your creating simple app -> api
 const app = express();
 const UserRouter = require("./router/UserRouter");
+const ProductRouter = require("./router/ProductRouter");
 
 app.use(express.json());
 app.use("/api/user", UserRouter);
