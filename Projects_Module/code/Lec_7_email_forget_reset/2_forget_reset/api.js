@@ -26,6 +26,10 @@ mongoose.connect(dbURL)
     }).catch(err => console.log(err))
 const UserModel = require("./model/UserModel");
 
+const sendEmailHelper = require("./dynamicMailSender");
+const fs = require("fs");
+// never -> sync in your server 
+const HtmlTemplateString = fs.readFileSync("./otp.html", "utf-8");
 /*************************************************/
 const app = express();
 /***to get the data in req.body **/
@@ -36,7 +40,6 @@ app.use(cookieParser());
  * 1. signup 
  * 2. login 
  * 3. /allowIfLoggedIn -> allows you to acess getUserData if user is authenticated 
- * 
  * **/
 
 
@@ -115,7 +118,7 @@ const loginController = async function (req, res) {
 }
 const protectRouteMiddleWare = async function (req, res, next) {
     try {
-        let jwttoken =req.cookies.JWT;
+        let jwttoken = req.cookies.JWT;
 
         let decryptedToken = await promisifiedJWTVerify(jwttoken, JWT_SECRET);
         if (decryptedToken) {
@@ -129,7 +132,7 @@ const protectRouteMiddleWare = async function (req, res, next) {
             message: err.message,
             status: "failure"
         })
-        
+
     }
 }
 const getUserData = async function (req, res) {
@@ -141,15 +144,142 @@ const getUserData = async function (req, res) {
             user: user
         })
     } catch (err) {
-        res.status(200).json({
-            message: err.message
+        res.status(500).json({
+            message: err.message,
+            status: "failure"
         })
     }
 }
+
+/**
+ * It will open forgetPassword
+ *  *
+ *  * Token 
+ * **/
+
+const forgetPasswordController = async function (req, res) {
+    try {
+        // -> send his email 
+        let { email } = req.body;
+        //  check for the email -> exist or not
+        let user = await UserModel.findOne({ email: email })
+        if (user) {
+            // exists ->
+            const otp = otpGenerator();
+
+            // 1. send the Email -> token
+            await sendEmailHelper(otp, HtmlTemplateString, user.name, user.email)
+            // 2. save that token in DB 
+            user.token = otp;
+            user.otpExpiry = Date.now() + 1000 * 60 * 5;
+            // if you update an object -> model
+            await user.save();
+
+            res.status(200).json({
+                message: "user updated",
+                status: "success",
+                otp: otp,
+                userId: user.id
+            })
+        } else {
+            //  if not -> return -> no user found
+            res.status(404).json({
+                status: "failure",
+                message: "no user with this email id found"
+            })
+        }
+
+    } catch (err) {
+        res.status(500).json({
+            message: err.message,
+            status: "failure"
+        })
+    }
+
+
+
+}
+
+
+const resetPasswordController = async function (req, res) {
+    //  -> otp 
+    //  newPassword and newConfirmPassword 
+    // -> params -> id 
+    try {
+        const userId = req.params.userId;
+        const { password, confirmPasword, otp } = req.body;
+        /****
+         * 1. search user using id
+         * 
+         *      a.  not found -> invalid otp or session  
+         *      b. it's found 
+         *                  -> get the token  is matching&&check it's expiry>currentTime 
+         *                          -> update the user's password
+         *                              
+         * **/
+
+        const user = await UserModel.findById(userId);
+        if (user) {
+            if (otp && user.token == otp) {
+                let currentTime = Date.now();
+                if (currentTime < user.otpExpiry) {
+                    user.confirmPassword = confirmPasword;
+                    user.password = password;
+                    delete user.token;
+                    delete user.otpExpiry
+                    await user.save();
+                    res.status(200).json({
+                        "status": "success",
+                        message: "your password is updated"
+                    })
+                }
+            } else {
+                res.status(404).json({
+                    status: "failure",
+                    message: "otp is not found or wrong"
+                })
+            }
+
+        } else {
+            res.status(404).json({
+                status: "failure",
+                message: "no user with this email id found"
+            })
+        }
+    } catch (err) {
+        res.status(500).json({
+            message: err.message,
+            status: "failure"
+        })
+    }
+
+
+}
+
+
+
+
+function otpGenerator() {
+    return Math.floor(100000 + Math.random() * 900000);
+}
+
+
+
+
+
+
+/***
+ * Forget password -> Email 
+ * Reset PAssword
+ * */
+
+
 /************routes***************/
 app.post("/signup", signupController);
 app.post("/login", loginController);
 app.get("/allowIfLoggedIn", protectRouteMiddleWare, getUserData);
+app.patch("/forgetpassword", forgetPasswordController);
+app.patch("/resetPassword/:userId", resetPasswordController);
 
 
 /******************handler functions ***************/

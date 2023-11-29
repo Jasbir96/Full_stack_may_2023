@@ -28,10 +28,16 @@ const userSchemaRules = {
     createdAt: {
         type: Date,
         default: Date.now()
+    },
+    token: {
+        type: String
+    },
+    otpExpiry: {
+        type:Date
     }
 }
 // schema-> structure and validation 
 const userSchema = new mongoose.Schema(userSchemaRules);
 // this model -> will have queries 
 const UserModel = mongoose.model("userModel", userSchema);
-module.exports=UserModel;
+module.exports = UserModel;
