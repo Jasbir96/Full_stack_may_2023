@@ -10,6 +10,7 @@ const { JWT_SECRET } = process.env;
 const fs = require("fs");
 const path = require("path");
 
+
 const pathToOtpHTML = path.join(__dirname, "../", "utility", "otp.html");
 const HtmlTemplateString = fs.readFileSync(pathToOtpHTML, "utf-8");
 
@@ -229,11 +230,50 @@ const isAdminMiddleWare = async function (req, res, next) {
 
 }
 
+const isAuthorizedMiddleWare = function (allowedRoles) {
+    return async function (req, res, next) {
+        try {
+            let id = req.userId;
+            let user = await UserModel.findById(id);
+            let isAuthorized = allowedRoles.includes(user.role);
+            if (isAuthorized) {
+                console.log("authorized user");
+                next();
+            } else {
+                console.log("returning back ")
+                res.status(401).json({
+                    status: "failure",
+                    "message": "You are not authorized to do this action "
+                })
+            }
+
+        } catch (err) {
+            res.status(500).json({
+                message: err.message,
+                status: "failure"
+            })
+
+        }
+    }
+}
+
+
+const logoutController = function (req, res) {
+    res.cookie("JWT", "dsjfbmdjbhsf", { maxAge: Date.now(), httpOnly: true, path: "/" });
+
+    res.status(200).json({
+        status: "success",
+        message: "user logged out "
+    })
+}
+
 module.exports = {
     signupController,
     loginController,
     forgetPasswordController,
     resetPasswordController,
     protectRouteMiddleWare,
-    isAdminMiddleWare
+    isAdminMiddleWare,
+    isAuthorizedMiddleWare,
+    logoutController
 }

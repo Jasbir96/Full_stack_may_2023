@@ -6,11 +6,14 @@ const { createProductHandler,
     deleteProductById } = require("../controller/ProductController");
 const { checkInput } = require("../controller/middleWares");
 const ProductModel = require("../model/ProductModel");
+const { protectRouteMiddleWare, isAuthorizedMiddleWare } = require("../controller/AuthController");
 /***********products***********/
-ProductRouter.post("/", checkInput, createProductHandler);
+ProductRouter.post("/", checkInput,
+    protectRouteMiddleWare, isAuthorizedMiddleWare(['Admin', 'Seller']),
+    createProductHandler);
 ProductRouter.get("/", getAllProductHandler);
 ProductRouter.get("/:productId", getProductById);
-ProductRouter.delete("/:productId", deleteProductById);
+ProductRouter.delete("/:productId", isAuthorizedMiddleWare(['Admin', 'Seller']), deleteProductById);
 module.exports = ProductRouter;
 
 async function getAllProductHandler(req, res) {

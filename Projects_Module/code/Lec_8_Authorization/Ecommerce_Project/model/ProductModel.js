@@ -36,8 +36,6 @@ const mongoose = require("mongoose");
 //         },
 //     },
 // }
-
-
 const newProductSchemaRules = {
     name: {
         type: String,
@@ -102,7 +100,7 @@ const newProductSchemaRules = {
 const productSchema = new mongoose.Schema(newProductSchemaRules);
 
 
-let validCategories = ['Electronics', "Audio", 'Clothing', 'Accessories',"Shoes"];
+let validCategories = ['Electronics', "Audio", 'Clothing', 'Accessories', "Shoes", "Men's Fashion"];
 
 productSchema.pre("save", function (next) {
     const product = this;

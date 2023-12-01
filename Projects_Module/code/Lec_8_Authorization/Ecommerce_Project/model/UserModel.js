@@ -39,7 +39,7 @@ const userSchemaRules = {
         type: Date
     },
     /***
-     * role -> authorization 
+     * role -> aut
      * */
     role: {
         type: String,
@@ -48,6 +48,25 @@ const userSchemaRules = {
 }
 // schema-> structure and validation 
 const userSchema = new mongoose.Schema(userSchemaRules);
+let validCategories = ['Admin', "user", 'Seller'];
+
+
+// schema-> structure and validation 
+userSchema.pre("save", function (next) {
+    const user = this;
+    if (user.role) {
+        const isValid = validCategories.includes(user.role);
+        if (isValid) {
+            next();
+        } else {
+            return next(err);
+        }
+    } else {
+        user.role = "user";
+        next();
+    }
+
+})
 // this model -> will have queries 
 const UserModel = mongoose.model("userModel", userSchema);
 module.exports = UserModel;

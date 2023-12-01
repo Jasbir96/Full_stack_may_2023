@@ -33,15 +33,14 @@ const userSchemaRules = {
         type: String
     },
     otpExpiry: {
-        type:Date
+        type: Date
     },
-    role:{
-        type:String,
-        default:"user"
+    role: {
+        type: String,
+        default: "user"
     }
 }
-// schema-> structure and validation 
-const userSchema = new mongoose.Schema(userSchemaRules);
+
 // this model -> will have queries 
 const UserModel = mongoose.model("userModel", userSchema);
 module.exports = UserModel;
