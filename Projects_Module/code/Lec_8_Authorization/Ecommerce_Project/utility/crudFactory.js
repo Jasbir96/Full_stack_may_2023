@@ -68,7 +68,7 @@ const deleteByIdFactory = (ElementModel) => {
     return async function (req, res) {
         let { elementId } = req.params;
         try {
-            let element = await elementModel.findByIdAndDelete(elementId);
+            let element = await ElementModel.findByIdAndDelete(elementId);
             res.status(200).json({
                 status: "successfull element deleted",
                 message: element

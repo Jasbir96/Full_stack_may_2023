@@ -1,12 +1,16 @@
 const express = require("express");
 const UserRouter = express.Router();
 const { getAllUserHandler, createuserHandler, getUserById, deleteUserById } = require("../controller/UserController")
-const { checkInput } = require("../controller/middleWares")
+const { checkInput } = require("../controller/middleWares");
+const { protectRouteMiddleWare, isAdminMiddleWare } = require("../controller/AuthController");
 /***********routes**************/
 /**********users*****/
-UserRouter.get("/", getAllUserHandler);
+UserRouter.use(protectRouteMiddleWare);
+
+UserRouter.get("/", isAdminMiddleWare, getAllUserHandler);
+
 // chaining
-UserRouter.post("/", checkInput, createuserHandler);
+UserRouter.post("/", checkInput, isAdminMiddleWare,createuserHandler);
 UserRouter.get("/:userId", getUserById);
-UserRouter.delete("/:userId", deleteUserById);
+UserRouter.delete("/:userId", isAdminMiddleWare,deleteUserById);
 module.exports = UserRouter;

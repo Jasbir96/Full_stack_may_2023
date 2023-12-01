@@ -3,8 +3,7 @@ const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 dotenv.config();
 /******************setup *********************/
-// send the API key 
-process.env.SENDGRID_API_KEY;
+
 //  entering the details about our smtp server and client -> Creating transporter
 const techDetails = {
     host: 'smtp.sendgrid.net',

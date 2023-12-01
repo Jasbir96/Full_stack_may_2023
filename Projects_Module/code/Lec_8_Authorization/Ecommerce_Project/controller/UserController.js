@@ -9,6 +9,7 @@ const createuserHandler = createFactory(UserModel);
 const getUserById = getByIdFactory(UserModel);
 const deleteUserById = deleteByIdFactory(UserModel);
 
+
 module.exports = {
     getAllUserHandler, createuserHandler, getUserById, deleteUserById
 }

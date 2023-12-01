@@ -1,14 +1,17 @@
-/******all the required imports are in the same file***/ 
+/******all the required imports are in the same file***/
 const UserModel = require("../model/UserModel");
 const jwt = require("jsonwebtoken");
 const promisify = require("util").promisify;
 const promisifiedJWTSign = promisify(jwt.sign);
 const promisifiedJWTVerify = promisify(jwt.verify);
-const otpGenerator=require("../utility/generateOtp");
+const otpGenerator = require("../utility/generateOtp");
+const { JWT_SECRET } = process.env;
 // never -> sync in your server 
-const HtmlTemplateString = fs.readFileSync("../utility/otp.html", "utf-8");
+const fs = require("fs");
+const path = require("path");
 
-
+const pathToOtpHTML = path.join(__dirname, "../", "utility", "otp.html");
+const HtmlTemplateString = fs.readFileSync(pathToOtpHTML, "utf-8");
 
 const signupController = async function (req, res) {
     try {
