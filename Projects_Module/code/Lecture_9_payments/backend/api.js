@@ -9,7 +9,7 @@ dotenv.config();
 
 app.use(cors());
 app.use(express.json())
-const { PUBLIC_KEY, PRIVATE_KEY } = process.env;
+const { PUBLIC_KEY, PRIVATE_KEY, WEBHOOK_SECERET } = process.env;
 /***
  * this instance identifies your server
  * **/
@@ -25,7 +25,7 @@ app.post("/checkout", async function (req, res) {
     try {
 
         const options = {
-            amount: amount*100,
+            amount: amount * 100,
             currency: currency,
             receipt: shortId.generate(),
         }
@@ -49,6 +49,18 @@ app.post("/checkout", async function (req, res) {
     }
 
 
+})
+
+app.post("/verification", async function (req,res) {
+    try {
+        console.log("hi", req.body);
+        res.json({ status: "ok" });
+    } catch (err) {
+        res.status(500).json({
+            status: "failure",
+            message: err.message
+        })
+    }
 })
 
 
