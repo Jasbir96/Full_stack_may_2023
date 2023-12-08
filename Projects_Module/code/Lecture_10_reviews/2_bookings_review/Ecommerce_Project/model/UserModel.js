@@ -29,10 +29,14 @@ const userSchemaRules = {
         type: Date,
         default: Date.now()
     },
-    /****
-     *  token -> forget and reset 
-     * **/
-    token: {
+    bookings: {
+        type: [mongoose.Schema.ObjectId],
+        ref: "bookingModel"
+    },
+/****
+ *  token -> forget and reset 
+ * **/
+token: {
         type: String
     },
     otpExpiry: {

@@ -3,7 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-
+const cors = require("cors");
 // including env variables
 dotenv.config();
 const { PORT, DB_PASSWORD, DB_USER } = process.env;
@@ -15,20 +15,22 @@ mongoose.connect(dbURL)
         console.log("connected to db");
     }).catch(err => console.log(err))
 
-
-
 // with this your creating simple app -> api
 const app = express();
 const UserRouter = require("./router/UserRouter");
 const ProductRouter = require("./router/ProductRouter");
 const AuthRouter = require("./router/AuthRouter");
-
+const BookingRouter = require("./router/BookingRouter");
+const ReviewRouter = require("./router/ReviewRouter");
+app.use(cors());
 app.use(express.json());
-
 app.use(cookieParser());
+
 app.use("/api/user", UserRouter);
 app.use("/api/product", ProductRouter);
 app.use("/api/auth", AuthRouter);
+app.use("/api/booking", BookingRouter);
+app.use("/api/review",ReviewRouter);
 
 
 

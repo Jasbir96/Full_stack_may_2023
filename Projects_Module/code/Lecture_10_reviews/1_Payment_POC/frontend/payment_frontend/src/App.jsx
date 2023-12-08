@@ -23,7 +23,9 @@ async function displayRazorpay() {
   // to load the script
   try {
     await loadScript();
-    const resp = await fetch("http://localhost:3000/checkout", { method: "POST" })
+    const resp = await
+      fetch("http://localhost:3000/api/booking/",
+        { method: "POST",  })
     const respJson = await resp.json();
     const { id, currency, amount } = respJson.message;
     console.log(id, currency, amount);

@@ -89,6 +89,10 @@ const newProductSchemaRules = {
         },
         message: "stock_quantity should can't be negative "
     },
+    reviews: {
+        type: [mongoose.Schema.ObjectId],
+        ref:"reviewModel"
+    }
 
 }
 
