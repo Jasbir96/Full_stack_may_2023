@@ -26,11 +26,11 @@ export default function basicOps(products, searchTerm, sortDir, currCategory, pa
 
     /**************************categorization**********************************************/
     let filteredSortedgroupByArr = filteredSortedArr;
-    if (currCategory != "All categories") {
-        filteredSortedgroupByArr = filteredSortedgroupByArr.filter((product) => {
-            return product.category == currCategory
-        })
-    }
+    // if (currCategory != "All categories") {
+    //     filteredSortedgroupByArr = filteredSortedgroupByArr.filter((product) => {
+    //         return product.category == currCategory
+    //     })
+    // }
 
 
     let totalPages = Math.ceil(filteredSortedgroupByArr.length / pageSize);

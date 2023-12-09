@@ -7,7 +7,8 @@ import ProductList from '../components/ProductList';
 import Categories from '../components/Categories';
 import basicOps from '../utility/basicOps';
 import { usePaginationContext } from '../contexts/PaginationContext';
-
+import axios from "axios";
+import urlConfig from '../../urlConfig';
 function Home() {
     // preserver -> pagination
     /***single source of truth for all the products***/
@@ -28,23 +29,42 @@ function Home() {
     /****************get all the products*********************/
     useEffect(() => {
         (async function () {
-            const resp = await fetch(`https://fakestoreapi.com/products`)
-            console.log(resp);
-            const anotherResp = await fetch("/api/product");
+            // const resp = await fetch(`https://fakestoreapi.com/products`)
+            // // console.log(resp)
+
+            // const productData = await resp.json();
+            // setProducts(productData);
+
+            // i will be using axios
+            const resp = await axios.get(urlConfig.ALL_PRODUCT_URL);
+            // req.data
+            const productArr = resp.data.message;
+            console.log(productArr);
             
-            const productData = await resp.json();
-            setProducts(productData);
+            const productMappedArr = productArr.map((product) => {
+                return {
+                    ...product,
+                    id: product["_id"],
+                    images: product.productImages,
+                    title: product.name
+                }
+            })
+            setProducts(productMappedArr);
+
+            // product.id
+            // product.image
+            // product.title
         })()
     }, [])
 
     /**************getting all the categroies ********************/
-    useEffect(() => {
-        (async function () {
-            const resp = await fetch(`https://fakestoreapi.com/products/categories`)
-            const categoriesData = await resp.json();
-            setCategories(categoriesData);
-        })()
-    }, [])
+    // useEffect(() => {
+    //     (async function () {
+    //         const resp = await fetch(`https://fakestoreapi.com/products/categories`)
+    //         const categoriesData = await resp.json();
+    //         setCategories(categoriesData);
+    //     })()
+    // }, [])
     const object = basicOps(products, searchTerm, sortDir, currCategory, pageNum, pageSize);
     const filteredSortedgroupByArr = object.filteredSortedgroupByArr;
     const totalPages = object.totalPages;
@@ -81,12 +101,12 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="categories_wrapper">
+                {/* <div className="categories_wrapper">
                     <Categories categories={categories}
                         setCurrCategory={setCurrCategory}
 
                     ></Categories>
-                </div>
+                </div> */}
 
             </header>
 
