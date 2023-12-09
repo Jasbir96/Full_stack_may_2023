@@ -4,7 +4,6 @@ import axios from 'axios';
 import urlConfig from '../../../urlConfig';
 import { Link, useNavigate } from "react-router-dom";
 
-
 function Index() {
     /*************state variables*************/
     const [name, setName] = useState('')

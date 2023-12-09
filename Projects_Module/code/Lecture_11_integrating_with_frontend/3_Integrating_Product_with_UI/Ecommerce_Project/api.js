@@ -22,7 +22,16 @@ const ProductRouter = require("./router/ProductRouter");
 const AuthRouter = require("./router/AuthRouter");
 const BookingRouter = require("./router/BookingRouter");
 const ReviewRouter = require("./router/ReviewRouter");
-app.use(cors());
+
+const corsConfig = {
+    origin: true,
+    credentials: true,
+};
+// this is allowing all the requests
+app.use(cors(corsConfig));
+app.options('*', cors(corsConfig));
+
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 

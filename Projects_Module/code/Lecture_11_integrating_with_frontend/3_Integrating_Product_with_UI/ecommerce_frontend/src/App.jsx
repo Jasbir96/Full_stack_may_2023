@@ -23,7 +23,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails></ProductDetails>}> </Route>
         <Route path="/user" element={<User></User>}> </Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signin" element={<Login></Login>}></Route>
         <Route path="/home" element={<Navigate to="/"></Navigate>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}> </Route>
       </Routes>
