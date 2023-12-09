@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./login.css"
 import urlConfig from '../../../urlConfig';
 import axios from "axios";
+import useAuth from '../../hooks/useAuth';
 
 function Index() {
     /*****data for you backend***/
@@ -12,6 +13,8 @@ function Index() {
     const [loading, setLoading] = useState(false);
     const [errMsg, setErrMsg] = useState("");
     const navigate = useNavigate();
+
+    const { setAuth } = useAuth();
     const handleSubmit = async () => {
 
         /***
@@ -21,18 +24,19 @@ function Index() {
          *              success -> reroute it to home & clear all the state variables
          *              failure -> show the error for few second    
          * ***/
-
         try {
             setLoading(true);
             let userDetails = {
                 password, email
             }
-            const resp = await axios.post(urlConfig.LOGIN_URL, userDetails, 
+            const resp = await axios.post(urlConfig.LOGIN_URL, userDetails,
                 {
-                withCredentials: true
-            });
-            const ans = resp.data;
-            console.log(ans);
+                    withCredentials: true
+                });
+            const user = resp.data.message;
+            setAuth(user);
+
+            // console.log(ans);
             setEmail("");
             setPassword("");
 

@@ -56,7 +56,10 @@ const loginController = async function (req, res) {
                 res.cookie("JWT", token, { maxAge: 90000000, httpOnly: true, path: "/" });
                 res.status(200).json({
                     status: "success",
-                    message: "user logged In"
+                    message:{
+                        name:user.name,
+                        email:user.email,
+                    }
                 })
             } else {
                 console.log("err", err)

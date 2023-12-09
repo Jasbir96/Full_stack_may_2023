@@ -12,14 +12,17 @@ import User from './pages/User';
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import PaginationProvider from './contexts/PaginationContext';
-
+import RequireAuth from './components/RequireAuth'
 function App() {
   return (
     <PaginationProvider>
       <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home></Home>}> </Route>
-        <Route path="/cart" element={<Cart></Cart>}></Route>
+
+        <Route   element={<RequireAuth></RequireAuth>}>
+          <Route path="/cart"  element={<Cart></Cart>}></Route>
+        </Route>
         <Route path="/product/:id" element={<ProductDetails></ProductDetails>}> </Route>
         <Route path="/user" element={<User></User>}> </Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
