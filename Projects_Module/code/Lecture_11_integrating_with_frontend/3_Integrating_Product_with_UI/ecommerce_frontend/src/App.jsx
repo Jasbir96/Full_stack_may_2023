@@ -9,7 +9,9 @@ import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import Cart from "./pages/Cart";
 import User from './pages/User';
-import PaginationProvider from './contexts/PaginationContext'
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import PaginationProvider from './contexts/PaginationContext';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/cart" element={<Cart></Cart>}></Route>
         <Route path="/product/:id" element={<ProductDetails></ProductDetails>}> </Route>
         <Route path="/user" element={<User></User>}> </Route>
+        <Route path="/signup" element={<Signup></Signup>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/home" element={<Navigate to="/"></Navigate>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}> </Route>
       </Routes>

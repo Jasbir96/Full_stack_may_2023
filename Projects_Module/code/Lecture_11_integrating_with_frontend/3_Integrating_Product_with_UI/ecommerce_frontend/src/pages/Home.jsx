@@ -40,7 +40,6 @@ function Home() {
             // req.data
             const productArr = resp.data.message;
             console.log(productArr);
-            
             const productMappedArr = productArr.map((product) => {
                 return {
                     ...product,
@@ -50,7 +49,6 @@ function Home() {
                 }
             })
             setProducts(productMappedArr);
-
             // product.id
             // product.image
             // product.title
