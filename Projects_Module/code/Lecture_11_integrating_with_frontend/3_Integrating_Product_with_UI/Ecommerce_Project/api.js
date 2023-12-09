@@ -30,7 +30,7 @@ app.use("/api/user", UserRouter);
 app.use("/api/product", ProductRouter);
 app.use("/api/auth", AuthRouter);
 app.use("/api/booking", BookingRouter);
-app.use("/api/review", ReviewRouter);
+app.use("/api/review",ReviewRouter);
 
 
 
