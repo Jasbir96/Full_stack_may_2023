@@ -204,17 +204,6 @@ function tranformInputs(secs, mins, hrs) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // UI -> data -> into sync  -> 2 way binding
 
 
