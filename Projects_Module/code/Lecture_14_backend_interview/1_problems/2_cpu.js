@@ -16,10 +16,9 @@ function calculateFibonacci(number) {
     return calculateFibonacci(number - 1) + calculateFibonacci(number - 2);
 }
 app.use(cors());
-
 app.get('/fib', (req, res) => {
     const { number } = req.query;
-    console.log("received req")
+    console.log("handler fn ran from req")
     if (!number || isNaN(number) || number <= 0) {
         return res.status(400).json({ error: 'Please provide a valid positive number.' });
     }
