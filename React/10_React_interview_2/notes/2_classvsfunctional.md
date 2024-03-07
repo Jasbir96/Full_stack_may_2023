@@ -3,7 +3,7 @@
 *  you this is only availabel inside the life cycle methods
 * this.setState to update the
 
-## Stages of a react  componet
+## Stages of a react  component
 * mounting : creation
 * updation 
 * unmount : deletion 

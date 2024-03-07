@@ -10,7 +10,7 @@
 2. Update few changes  : update the state 
 * React will create another VDOM and then it will compare with the previous virtual DOM.
 * This process of comparing our old VDOM with new virtual is Known as `Reconcilation`
-* React uses an algorithm known `Diffing alogorithm` to compare your Old VDOM with new VDOM.
+* React uses an algorithm known `Diffing algorithm` to compare your Old VDOM with new VDOM.
 * Time complexity of our Diffing Algorithm  -> O(n)
 
 3. Updating the Real DOM: 
