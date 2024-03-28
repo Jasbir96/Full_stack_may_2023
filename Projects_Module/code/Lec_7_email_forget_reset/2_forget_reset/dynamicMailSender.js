@@ -17,10 +17,10 @@ const techDetails = {
     }
 }
 const transporter = nodemailer.createTransport(techDetails);
-const fs = require("fs");
+// const fs = require("fs");
 
 // never -> sync in your server 
-const HtmlTemplateString = fs.readFileSync("./otp.html", "utf-8");
+// const HtmlTemplateString = fs.readFileSync("./otp.html", "utf-8");
 
 /*************************************************/
 

@@ -1,8 +1,7 @@
-## HTTP packet
+**HTTP packet**
 * Header : metadata about the packet
 * cookies -> part of header 
 * Body : contains actual data that is being
-
 
 ## cookies
 * cookie is a client side storage
@@ -11,7 +10,7 @@
 * on the client side these cookies are stored and mapped to the server that has send the cookies
 * For next request -> client will automatically share this cookie with the server
 ### Learning : 
-* used to share some data to the client that server can access later 
+* used to share some data to the client that server can access later to personalize the experience 
 
 ## Identification vs Authentication vs Authorization 
 
@@ -38,7 +37,7 @@ JSON web token is built out of three component
 3. validation 
          a. server takes -> payload from incoming token + algorithm from incoming token + secret from the server and builds a fresh signature 
          b. compare  signature of incoming token and signature that is build in the above step
-         c.) validation fails if signature coming from the client does not match with freshely prepared signature
+         c. validation fails if signature coming from the client does not match with freshley prepared signature
 
 * To prevent access -> httpOnly 
 
